@@ -1,0 +1,15 @@
+#### [Be.Stateless.BizTalk.Messaging](README.md 'README')
+### [Be.Stateless.BizTalk.Message.Extensions](Be.Stateless.BizTalk.Message.Extensions.md 'Be.Stateless.BizTalk.Message.Extensions')
+
+## BaseMessagePartExtensions Class
+
+```csharp
+public static class BaseMessagePartExtensions
+```
+
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; BaseMessagePartExtensions
+
+| Methods | |
+| :--- | :--- |
+| [SetDataStream(this IBaseMessagePart, Stream, IResourceTracker)](BaseMessagePartExtensions.SetDataStream(thisIBaseMessagePart,Stream,IResourceTracker).md 'Be.Stateless.BizTalk.Message.Extensions.BaseMessagePartExtensions.SetDataStream(this Microsoft.BizTalk.Message.Interop.IBaseMessagePart, System.IO.Stream, Microsoft.BizTalk.Component.Interop.IResourceTracker)') | Replaces this [messagePart](BaseMessagePartExtensions.SetDataStream(thisIBaseMessagePart,Stream,IResourceTracker).md#Be.Stateless.BizTalk.Message.Extensions.BaseMessagePartExtensions.SetDataStream(thisMicrosoft.BizTalk.Message.Interop.IBaseMessagePart,System.IO.Stream,Microsoft.BizTalk.Component.Interop.IResourceTracker).messagePart 'Be.Stateless.BizTalk.Message.Extensions.BaseMessagePartExtensions.SetDataStream(this Microsoft.BizTalk.Message.Interop.IBaseMessagePart, System.IO.Stream, Microsoft.BizTalk.Component.Interop.IResourceTracker).messagePart')'s original data stream by another [stream](BaseMessagePartExtensions.SetDataStream(thisIBaseMessagePart,Stream,IResourceTracker).md#Be.Stateless.BizTalk.Message.Extensions.BaseMessagePartExtensions.SetDataStream(thisMicrosoft.BizTalk.Message.Interop.IBaseMessagePart,System.IO.Stream,Microsoft.BizTalk.Component.Interop.IResourceTracker).stream 'Be.Stateless.BizTalk.Message.Extensions.BaseMessagePartExtensions.SetDataStream(this Microsoft.BizTalk.Message.Interop.IBaseMessagePart, System.IO.Stream, Microsoft.BizTalk.Component.Interop.IResourceTracker).stream'). |
+| [WrapOriginalDataStream&lt;T&gt;(this IBaseMessagePart, Func&lt;Stream,T&gt;, IResourceTracker)](BaseMessagePartExtensions.WrapOriginalDataStream_T_(thisIBaseMessagePart,Func_Stream,T_,IResourceTracker).md 'Be.Stateless.BizTalk.Message.Extensions.BaseMessagePartExtensions.WrapOriginalDataStream<T>(this Microsoft.BizTalk.Message.Interop.IBaseMessagePart, System.Func<System.IO.Stream,T>, Microsoft.BizTalk.Component.Interop.IResourceTracker)') | Wraps this message part's original data stream in another stream returned by the [wrapper](BaseMessagePartExtensions.WrapOriginalDataStream_T_(thisIBaseMessagePart,Func_Stream,T_,IResourceTracker).md#Be.Stateless.BizTalk.Message.Extensions.BaseMessagePartExtensions.WrapOriginalDataStream_T_(thisMicrosoft.BizTalk.Message.Interop.IBaseMessagePart,System.Func_System.IO.Stream,T_,Microsoft.BizTalk.Component.Interop.IResourceTracker).wrapper 'Be.Stateless.BizTalk.Message.Extensions.BaseMessagePartExtensions.WrapOriginalDataStream<T>(this Microsoft.BizTalk.Message.Interop.IBaseMessagePart, System.Func<System.IO.Stream,T>, Microsoft.BizTalk.Component.Interop.IResourceTracker).wrapper') delegate. |

@@ -1,0 +1,21 @@
+#### [Be.Stateless.BizTalk.Pipeline.MicroComponents](README.md 'README')
+### [Be.Stateless.BizTalk.MicroComponent](Be.Stateless.BizTalk.MicroComponent.md 'Be.Stateless.BizTalk.MicroComponent')
+
+## MicroComponentEnumerableConverter Class
+
+Converts an [System.Collections.Generic.IEnumerable&lt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1') of [IMicroComponent](IMicroComponent.md 'Be.Stateless.BizTalk.MicroComponent.IMicroComponent')s back and forth to an XML [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String').
+
+```csharp
+public class MicroComponentEnumerableConverter : System.ComponentModel.ExpandableObjectConverter
+```
+
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [System.ComponentModel.TypeConverter](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.TypeConverter 'System.ComponentModel.TypeConverter') &#129106; [System.ComponentModel.ExpandableObjectConverter](https://docs.microsoft.com/en-us/dotnet/api/System.ComponentModel.ExpandableObjectConverter 'System.ComponentModel.ExpandableObjectConverter') &#129106; MicroComponentEnumerableConverter
+
+| Methods | |
+| :--- | :--- |
+| [CanConvertFrom(ITypeDescriptorContext, Type)](MicroComponentEnumerableConverter.CanConvertFrom(ITypeDescriptorContext,Type).md 'Be.Stateless.BizTalk.MicroComponent.MicroComponentEnumerableConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext, System.Type)') | Returns whether this converter can convert an object of the given type to the type of this converter, using the specified context. |
+| [CanConvertTo(ITypeDescriptorContext, Type)](MicroComponentEnumerableConverter.CanConvertTo(ITypeDescriptorContext,Type).md 'Be.Stateless.BizTalk.MicroComponent.MicroComponentEnumerableConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext, System.Type)') | Returns whether this converter can convert the object to the specified type, using the specified context. |
+| [ConvertFrom(ITypeDescriptorContext, CultureInfo, object)](MicroComponentEnumerableConverter.ConvertFrom(ITypeDescriptorContext,CultureInfo,object).md 'Be.Stateless.BizTalk.MicroComponent.MicroComponentEnumerableConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext, System.Globalization.CultureInfo, object)') | Converts the given object to the type of this converter, using the specified context and culture information. |
+| [ConvertTo(ITypeDescriptorContext, CultureInfo, object, Type)](MicroComponentEnumerableConverter.ConvertTo(ITypeDescriptorContext,CultureInfo,object,Type).md 'Be.Stateless.BizTalk.MicroComponent.MicroComponentEnumerableConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext, System.Globalization.CultureInfo, object, System.Type)') | Converts the given value object to the specified type, using the specified context and culture information. |
+| [Deserialize(string)](MicroComponentEnumerableConverter.Deserialize(string).md 'Be.Stateless.BizTalk.MicroComponent.MicroComponentEnumerableConverter.Deserialize(string)') | Deserializes an [System.Collections.Generic.IEnumerable&lt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1') of [IMicroComponent](IMicroComponent.md 'Be.Stateless.BizTalk.MicroComponent.IMicroComponent')s from its XML serialization [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String'). |
+| [Serialize(IEnumerable&lt;IMicroComponent&gt;)](MicroComponentEnumerableConverter.Serialize(IEnumerable_IMicroComponent_).md 'Be.Stateless.BizTalk.MicroComponent.MicroComponentEnumerableConverter.Serialize(System.Collections.Generic.IEnumerable<Be.Stateless.BizTalk.MicroComponent.IMicroComponent>)') | Serializes an [System.Collections.Generic.IEnumerable&lt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1') of [IMicroComponent](IMicroComponent.md 'Be.Stateless.BizTalk.MicroComponent.IMicroComponent')s to its XML [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String') representation. |

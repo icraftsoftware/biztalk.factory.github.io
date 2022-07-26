@@ -1,0 +1,19 @@
+﻿name: BizTalk.Factory SDK Pages
+title: BizTalk.Factory SDK
+description: "User's Guide"
+show_downloads: "true"
+show_header: "true"
+plugins:
+  - jekyll-seo-tag
+remote_theme: "dracula/gh-pages"
+
+# https://stackoverflow.com/q/42188235/1789441
+# https://stackoverflow.com/a/42762258/1789441
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  parse_block_html: "true"
+  syntax_highlighter: rouge
+  extensions: fenced_code_blocks

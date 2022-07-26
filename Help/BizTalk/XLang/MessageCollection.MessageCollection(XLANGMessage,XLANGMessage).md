@@ -1,0 +1,17 @@
+#### [Be.Stateless.BizTalk.XLang](README.md 'README')
+### [Be.Stateless.BizTalk.XLang](Be.Stateless.BizTalk.XLang.md 'Be.Stateless.BizTalk.XLang').[MessageCollection](MessageCollection.md 'Be.Stateless.BizTalk.XLang.MessageCollection')
+
+## MessageCollection(XLANGMessage, XLANGMessage) Constructor
+
+```csharp
+public MessageCollection(Microsoft.XLANGs.BaseTypes.XLANGMessage message1, Microsoft.XLANGs.BaseTypes.XLANGMessage message2);
+```
+#### Parameters
+
+<a name='Be.Stateless.BizTalk.XLang.MessageCollection.MessageCollection(Microsoft.XLANGs.BaseTypes.XLANGMessage,Microsoft.XLANGs.BaseTypes.XLANGMessage).message1'></a>
+
+`message1` [Microsoft.XLANGs.BaseTypes.XLANGMessage](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.XLANGs.BaseTypes.XLANGMessage 'Microsoft.XLANGs.BaseTypes.XLANGMessage')
+
+<a name='Be.Stateless.BizTalk.XLang.MessageCollection.MessageCollection(Microsoft.XLANGs.BaseTypes.XLANGMessage,Microsoft.XLANGs.BaseTypes.XLANGMessage).message2'></a>
+
+`message2` [Microsoft.XLANGs.BaseTypes.XLANGMessage](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.XLANGs.BaseTypes.XLANGMessage 'Microsoft.XLANGs.BaseTypes.XLANGMessage')

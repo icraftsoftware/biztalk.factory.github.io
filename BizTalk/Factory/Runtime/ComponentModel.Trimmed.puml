@@ -1,0 +1,45 @@
+﻿@startuml
+!theme metal
+'skinparam BackgroundColor #282a36
+skinparam ArrowColor #f8f8f2
+skinparam LineType ortho
+skinparam ComponentBackgroundColor #44475a
+skinparam ComponentBorderColor #f8f8f2
+skinparam ComponentFontColor #f8f8f2
+[Be.Stateless.BizTalk.Transform.ExtensionObjects] as BizTalk.ExtensionObjects
+together {
+    [Be.Stateless.Extensions] as Extensions
+    [Be.Stateless.Reflection] as Reflection
+}
+[Be.Stateless.Runtime] as Runtime
+    Runtime .u.> Extensions
+[Be.Stateless.BizTalk.Settings] as BizTalk.Settings
+    BizTalk.Settings .u.> Runtime
+[Be.Stateless.Security] as Security
+    Security .u.> Extensions
+[Be.Stateless.Stream] as Stream
+    Stream .u.> Extensions
+[Be.Stateless.Xml] as Xml
+    Xml .u.> Reflection
+    Xml .u.> Stream
+[Be.Stateless.BizTalk.Abstractions] as BizTalk.Abstractions
+    BizTalk.Abstractions .u.> Extensions
+[Be.Stateless.BizTalk.Xml] as BizTalk.Xml
+    BizTalk.Xml .u.> Runtime
+    BizTalk.Xml .u.> Xml
+[Be.Stateless.BizTalk.Stream] as BizTalk.Stream
+    BizTalk.Stream .u.> BizTalk.Xml
+[Be.Stateless.BizTalk.XLang] as BizTalk.XLang
+    BizTalk.XLang .u.> BizTalk.Abstractions
+    BizTalk.XLang .u.> BizTalk.Xml
+[Be.Stateless.BizTalk.Messaging] as BizTalk.Messaging
+    BizTalk.Messaging .u.> BizTalk.Abstractions
+    BizTalk.Messaging .u.> BizTalk.Stream
+[Be.Stateless.BizTalk.ServiceModel] as BizTalk.ServiceModel
+    BizTalk.ServiceModel .u.> BizTalk.Messaging
+[Be.Stateless.BizTalk.Pipeline.MicroComponents] as BizTalk.MicroComponents
+    BizTalk.MicroComponents .u.> BizTalk.Messaging
+    BizTalk.MicroComponents .u.> Security
+[Be.Stateless.BizTalk.Factory.Logging] as BizTalk.Factory.Logging
+    BizTalk.Factory.Logging .u.> Runtime
+@enduml

@@ -1,0 +1,66 @@
+﻿@startuml
+!theme metal
+skinparam BackgroundColor #282a36
+'skinparam LineType ortho
+skinparam Arrow {
+  Color #f8f8f2
+  FontColor #f8f8f2
+}
+skinparam Boundary {
+  BackgroundColor #44475a
+  BorderColor #f8f8f2
+  FontColor #f8f8f2
+}
+skinparam Component {
+  BackgroundColor #44475a
+  BorderColor #f8f8f2
+  FontColor #f8f8f2
+}
+skinparam Database {
+  BackgroundColor #44475a
+  BorderColor #f8f8f2
+  FontColor #f8f8f2
+}
+skinparam Note {
+  BackgroundColor #44475a
+  BorderColor #f8f8f2
+  FontColor #f8f8f2
+}
+
+boundary rl1 as "BizTalk.Factory.Batching.\rRL1.Batch.Content.WCF-SQL.XML"
+boundary sp1_part as "BizTalk.Factory.Batching.\rSP1.Batch.Part.WCF-SQL.XML"
+  note top
+    <<filter>>
+    ---
+    Be.Stateless.BizTalk.Schemas.Batch.EnvelopeSpecName **Exists**
+  end note
+boundary sp1_release as "BizTalk.Factory.Batching.\rSP1.Batch.Release.WCF-SQL.XML"
+  note bottom
+    <<filter>>
+    ---
+    BTS.MessageType **==** urn:schemas.stateless.be:biztalk:batch:2012:12#ReleaseBatch
+  end note
+
+database "BizTalkFactoryTransientStateDb" {
+  component vw_batch_NextAvailableBatch as vw_poll
+}
+database "BizTalkFactoryTransientStateDb " {
+  component usp_batch_ReleaseNextBatch as usp_release
+}
+database MsgBox
+database " BizTalkFactoryTransientStateDb" {
+  component usp_batch_AddPart as usp_add
+  component usp_batch_QueueControlledRelease as usp_queue
+}
+
+rl1 .u..> vw_poll : " PolledDataAvailableStatement"
+usp_release .u..> rl1 : " <<message>> Content"
+rl1 .r..> MsgBox : " <<message>> Envelope"
+MsgBox .r..> sp1_part : " <<message>> Any"
+MsgBox .r..> sp1_release : " <<message>> Release"
+sp1_part .r..> usp_add
+sp1_release .r..> usp_queue
+
+' layout tuning tricks
+usp_add .[hidden]d.> usp_queue
+@enduml

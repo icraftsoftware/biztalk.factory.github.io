@@ -1,0 +1,30 @@
+﻿@startuml
+!theme metal
+'skinparam BackgroundColor #282a36
+skinparam ArrowColor #f8f8f2
+skinparam LineType ortho
+skinparam ComponentBackgroundColor #44475a
+skinparam ComponentBorderColor #f8f8f2
+skinparam ComponentFontColor #f8f8f2
+[Dsl.Configuration]
+'[Gac]
+'[InvokeBuild]
+'[SqlServer]
+[Psx]
+[Exec]
+   Exec .u.> Psx
+[BizTalk.Administration]
+   BizTalk.Administration .u.> Exec
+'   BizTalk.Administration .u.> Psx
+[Resource.Manifest]
+   Resource.Manifest .u.> BizTalk.Administration
+'   Resource.Manifest .u.> Psx
+[BizTalk.Deployment]
+   BizTalk.Deployment .u.> BizTalk.Administration
+   BizTalk.Deployment .u.> Dsl.Configuration
+'   BizTalk.Deployment .u.> Exec
+'   BizTalk.Deployment .u.> Gac
+'   BizTalk.Deployment .u.> InvokeBuild
+'   BizTalk.Deployment .u.> Psx
+'   BizTalk.Deployment .u.> SqlServer
+@enduml

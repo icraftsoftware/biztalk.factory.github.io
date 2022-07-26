@@ -1,0 +1,75 @@
+﻿@startuml
+!theme metal
+skinparam BackgroundColor #282a36
+'skinparam LineType ortho
+skinparam Arrow {
+  Color #f8f8f2
+  FontColor #f8f8f2
+}
+skinparam Class {
+  BackgroundColor #44475a
+  BorderColor #f8f8f2
+  FontColor #f8f8f2
+}
+hide circle
+
+!define table(x) class x
+!define primary_key(x) {field} <b><color:yellow><&key></color> x</b>
+!define foreign_key(x) {field} <color:#aaaaaa><&key></color> x
+!define column(x) {method} <color:#f8f8f4><&media-record></color> x
+
+table( batch_Envelopes ) {
+  primary_key( Id ): int
+  column( EnvelopeSpecName ): nvarchar(256)
+}
+
+table( batch_Parts ) {
+  primary_key( Id ): int
+  foreign_key( EnvelopeId ): int
+  'column( EnvironmentTag ): nvarchar(256)
+  column( MessagingStepActivityId ): nvarchar(32)
+  column( Partition ): nvarchar(128) = ('0')
+  column( Data ): nvarchar(max)
+  column( Timestamp ): datetime2(0) = (sysutcdatetime())
+}
+
+table( batch_QueuedControlledReleases ) {
+  foreign_key( primary_key( EnvelopeId )): int
+  primary_key( Partition ): nvarchar(128)
+  'column( EnvironmentTag ): nvarchar(256)
+  column( ProcessActivityId ): nvarchar(32)
+  column( Timestamp ): datetime2(0) = (sysutcdatetime())
+}
+
+table( batch_ReleasePolicyDefinitions ) {
+  foreign_key( primary_key( EnvelopeId )): int
+  'column( EnvironmentTag ): nvarchar(256)
+  primary_key( Partition ): nvarchar(128)
+  column( Enabled ): bit
+  column( ReleaseOnElapsedTimeOut ): int
+  column( ReleaseOnIdleTimeOut ): int
+  column( ReleaseOnItemCount ): int
+  column( EnforceItemCountLimitOnRelease ): bit
+}
+
+table( vw_batch_ReleasePolicies){
+}
+hide vw_batch_ReleasePolicies members
+
+table( vw_batch_NextAvailableBatch){
+}
+hide vw_batch_NextAvailableBatch members
+
+batch_Envelopes "1" <-- "0..*" batch_Parts
+batch_Envelopes "1" <-- "0..*" batch_QueuedControlledReleases
+batch_Envelopes "1" <-- "0..*" batch_ReleasePolicyDefinitions
+
+vw_batch_ReleasePolicies .u.> batch_Parts
+vw_batch_ReleasePolicies .u.> batch_ReleasePolicyDefinitions
+
+vw_batch_NextAvailableBatch .u.> batch_Envelopes
+vw_batch_NextAvailableBatch .u.> batch_Parts
+vw_batch_NextAvailableBatch .l.> vw_batch_ReleasePolicies
+vw_batch_NextAvailableBatch .u.> batch_QueuedControlledReleases
+
+@enduml

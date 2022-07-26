@@ -1,57 +1,233 @@
-﻿# Be.Stateless.BizTalk.Abstractions Component
+﻿# Be.Stateless.BizTalk.Abstractions
 
-[![GitHub](https://img.shields.io/static/v1?label=Repository&message=Be.Stateless.BizTalk.Abstractions&logo=github)][GitHub]
+<div class="badges">
+<div>
 
-[![Build Status](https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Abstractions%20Manual%20Release?branchName=master)][Pipeline]
+[![][github.badge]][github]
 
-[![NuGet Version](https://img.shields.io/nuget/v/Be.Stateless.BizTalk.Abstractions.svg?label=Be.Stateless.BizTalk.Abstractions&style=flat?style=plastic&logo=nuget)][NuGet Package]
+[![][release.badge]][release]
 
+</div>
+<div>
+
+[![][pipeline.ci.badge]][pipeline.ci]
+
+[![][pipeline.mr.badge]][pipeline.mr]
+
+</div>
+<div>
+
+[![][nuget.badge]][nuget]
+
+</div>
+</div>
 
 ## Overview
 
-Be.Stateless.BizTalk.Abstractions is part of the [BizTalk.Factory Runtime Package](./../Factory/Runtime/README.md). This component provides caching and BizTalk Server's message context abstractions.
-
-## Caching Abstractions
-
-Caching abstractions provide both absolute and sliding expiration caches that are used pervasively in BizTalk.Factory to either cache for instance extracted schema metadata, compiled XSLTs, compiled regular expressions, and so on...
-
-Further information can be found in the XML comments embedded in the source code and accompanying the [NuGet Package].
+`Be.Stateless.BizTalk.Abstractions` is part of the [BizTalk.Factory Runtime](./../Factory/Runtime/README.md) Package. This component provides various abstractions over Microsoft BizTalk Server®'s message contexts and context properties.
 
 ## Message Context Abstractions
 
-There is some amount of idiosyncrasies coming with Microsoft BizTalk Server®, and reading, promoting, and writing context properties certainly come with its share of oddities.
+There is some amount of idiosyncrasies coming with Microsoft BizTalk Server® and the API to manipulate &mdash;i.e. reading, promoting, or writing&mdash; message context properties certainly comes with its shares of oddities.
 
-First, accessing the context property must be done in two very distinct ways depending on whether the property needs to be accessed from an `IBaseMessage` or an `XLANGMessage` message object instance. The `IBaseMessage` API is even more awkward as one must most often instantiate some sort of context property descriptor object in order to get a QName that will allow one to ultimately get both the context property's local and namespace names to pass to the API method.
+### Message Context API
 
-Next, the value returned is always of type object and it must always be casted to the exact concrete type of the property.
+First and foremost, accessing the context property must be done in two very distinct ways depending on whether the property needs to be accessed from an `IBaseMessage` or an `XLANGMessage`-based message instance. The `IBaseMessage` API is even more awkward as one must most often instantiate some sort of context property descriptor in order to get a QName that will ultimately allow one to get both the context property's local and namespace names to pass to the API method.
 
-Finally, how to delete a property value from the message context as none of the `IBaseMessage` and `XLANGMessage` API expose a delete method. Does one have to assign to the property a null value or an empty string? Does this work the same way with both `IBaseMessage` and `XLANGMessage` APIs?
+Then, the value returned be the reading API is always of type `object` and it must always be _explicitly_ casted to the exact concrete type of the property, which requires extra caution to handle `null` values when reading value type properties.
 
-`IBaseMessage` Sample
+Finally, deleting a property value from the message context is generally awkward as none of the `IBaseMessage` and `XLANGMessage` API exposes a `Delete()` method. Does one have to assign a null value or an empty string to the property? Does this work the same way with both `IBaseMessage` and `XLANGMessage` APIs?
 
-`XLANGMessage` Sample
+Take a look at the following couple of code samples that demonstrate how to read context properties with the native APIs.
 
-Would it not be better if there was a unique, regular, and type-safe way of accessing message context properties? Come `Be.Stateless.BizTalk.ContextProperties.MessageContextProperty<T, TR>` and `Be.Stateless.BizTalk.Message.Extensions.BaseMessage` classes to the rescue! With the help of these two classes, and provided the property to access has been defined in a property schema as a Microsoft.XLANGs.BaseTypes.MessageContextPropertyBase-derived property, one now can simply write the following code.
+Sample 1 - Accessing context properties using the built-in `IBaseMessage` API.
 
-Granted, this new API comes with a price: one has to define the context properties in one property schema, even though the original `IBaseMessage` API would not require it. All one needed to access a context property from an `IBaseMessage` was a couple of namespace and local name strings. This new requirement however comes with a huge benefit that far outweighs its drawback. Magic strings never have to be used any more, and namespace can never get out of sync between the `IBaseMessage` and `XLANGMessage` APIs.
+```csharp
+public void ProcessMessage(IBaseMessage message)
+{
+    ...
 
+    var messageTypeProperty = new BTS.MessageType();
+    string messageType = (string) message.Context.Read(
+        messageTypeProperty.Name.Name,
+        messageTypeProperty.Name.Namespace);
 
+    var enqueuedTimeProperty = new SBMessaging.EnqueuedTimeUtc();
+    object value = message.Context.Read(
+        enqueuedTimeProperty.Name.Name,
+        enqueuedTimeProperty.Name.Namespace);
+    DateTime enqueuedTime = value != null ? (DateTime) value : default;
 
-## BizTalk Factory Context Property Schemas
+    ...
+}
+```
 
-BizTalk Factory comes with the following context property schemas, all packaged into the Be.Stateless.BizTalk.Schemas assembly:
-•	Be.Stateless.BizTalk.Schemas.BizTalkFactory.Properties, whose XML target namespace is urn:schemas.stateless.be:biztalk:properties:system:2012:04,
-•	Be.Stateless.BizTalk.Schemas.Tracking.Properties, whose XML target namespace is urn:schemas.stateless.be:biztalk:properties:tracking:2012:04,
-•	BTS.UnexposedSystemProperties, whose XML target namespace is http://schemas.microsoft.com/BizTalk/2003/system-properties,
-•	EDI.UnexposedEdiProperties, whose XML target namespace is http://schemas.microsoft.com/Edi/PropertySchema,
+Sample 2 - Accessing context properties using the built-in `XLANGMessage` API.
 
+```csharp
+public void ProcessMessage(XLANGMessage message)
+{
+    ...
 
+    string messageType = (string) message.GetPropertyValue(
+        typeof(BTS.MessageType));
+
+    object value = (DateTime) message.GetPropertyValue(
+        typeof(SBMessaging.EnqueuedTimeUtc));
+    DateTime enqueuedTime = value != null ? (DateTime) value : default;
+
+    ...
+}
+```
+
+Now, contrast them with the following 2 code excerpts that demonstrate the use of a unique, regular, and type-safe API to manipulate message context properties. This new strongly-typed API is made available through extension methods provided by [BaseMessage][base-message-extensions] as wrappers around the built-in `IBaseMessage` and `XLANGMessage` APIs.
+
+Sample 3 - Accessing context properties using `BizTalk.Factory`'s `IBaseMessage` extension methods.
+
+```csharp
+public void ProcessMessage(IBaseMessage message)
+{
+    ...
+
+    string messageType = message.GetProperty(BtsProperties.MessageType);
+
+    DateTime? enqueuedTime = message.GetProperty(SBMessagingProperties.EnqueuedTimeUtc);
+
+    ...
+}
+```
+
+Sample 4 - Accessing context properties using `BizTalk.Factory`'s `XLANGMessage` extension methods.
+
+```csharp
+public void ProcessMessage(XLANGMessage message)
+{
+    ...
+
+    string messageType = message.GetProperty(BtsProperties.MessageType);
+
+    DateTime? enqueuedTime = message.GetProperty(SBMessagingProperties.EnqueuedTimeUtc);
+
+    ...
+}
+```
+
+Notice that besides being shorter, they are more importantly identical, regardless of whether the message is an `IBaseMessage` or an `XLANGMessage` instance. They do not require any explicit casting. They leverage [Nullable&lt;T&gt;][nullable] for properties that are value types and would otherwise not support `null` values without explicit special case handling.
+
+For the record, `BizTalk.Factory` moreover provides `IBaseMessageContext` extension methods that support the exact same API to either delete, promote, read or write context properties given an `IBaseMessageContext` object, see [BaseMessageContext][base-message-context-extensions].
+
+### MessageContextProperty<T, TR> Abstraction
+
+The previous extension-method-based API comes with 2 requirements:
+
+1. Each context property that needs to be accessed must derive from [MessageContextPropertyBase][message-context-property-base]. This usually means that the property must be defined as a `MessageContextPropertyBase` in a `Property` schema, but as one will see, the property could be defined in plain `C#` if one does not require the property to take part into subscription filters (e.g. send port's filters);
+
+2. A [MessageContextProperty<T, TR>][message-context-property] _accelerator_ needs to be instantiated for each context property that needs to be accessed via this API.
+
+While the original `IBaseMessage` API only requires a pair of namespace and local name strings, this API requires types to be defined. But this is not really an issue as the `XLANGMessage` API requires types to be defined anyway. The benefits of defining such types therefore far outweigh their costs:
+
+- There can be no longer be usage discrepancies between both `IBaseMessage` and `XLANGMessage` APIs as the API is now the same whether the message object being used derives from one type or the other;
+
+- Local and namespace names' magic strings never have to be used anymore;
+
+- Properties are always handled in a type-safe way, even the value type ones.
+
+Because instantiating these context property's type-accelerators on demand is tedious and cumbersome, `BizTalk.Factory` readily provides most of them as static properties defined in a bunch of classes:
+
+- [BizTalkFactoryProperties][biztalk-factory-properties.accelerators] provides the accelerators for the context properties that belong to `BizTalk.Factory` and cannot be used in publication/subscription filters.\
+  Note that `BizTalk.Factory` also provides accelerators for its context properties that are meant to be used in publication/subscription filters, see [BizTalk.Schemas' Property Schemas](..\Schemas\README.md#property-schemas);
+
+- [BtsProperties][bts-properties.accelerators] provides the accelerators for the Microsoft BizTalk Server®'s core system context properties, see [BTS](https://docs.microsoft.com/en-us/dotnet/api/bts) namespace;
+
+- [EdiProperties][edi-properties.accelerators] and [OverridableEdiProperties][overridable-edi-properties.accelerators] provides the accelerators for the Microsoft BizTalk Server®'s `EDI` context properties, see [EDI](https://docs.microsoft.com/en-us/dotnet/api/edi) and [EdiOverride](https://docs.microsoft.com/en-us/dotnet/api/edioverride) namespaces;
+
+- [ErrorReportProperties][error-report-properties.accelerators] provides the accelerators for the Microsoft BizTalk Server®'s context properties related to error reporting, see [ErrorReport](https://docs.microsoft.com/en-us/dotnet/api/errorreport) namespace;
+
+- [FileProperties][file-properties.accelerators] provides the accelerators for the Microsoft BizTalk Server®'s context properties related to the `File` adapter, see [FILE](https://docs.microsoft.com/en-us/dotnet/api/file) namespace;
+
+- [HttpProperties][http-properties.accelerators] provides the accelerators for the Microsoft BizTalk Server®'s context properties related to the `HTTP` adapter, see [HTTP](https://docs.microsoft.com/en-us/dotnet/api/http) namespace;
+
+- [Pop3Properties][pop3-properties.accelerators] provides the accelerators for the Microsoft BizTalk Server®'s context properties related to the `POP3` adapter, see [POP3](https://docs.microsoft.com/en-us/dotnet/api/pop3) namespace;
+
+- [SBMessagingProperties][sb-messaging-properties.accelerators] provides the accelerators for the Microsoft BizTalk Server®'s context properties related to the `SB-Messaging` adapter, see [SBMessaging](https://docs.microsoft.com/en-us/dotnet/api/sbmessaging) namespace.
+
+> **Remark** Take notice of another Microsoft BizTalk Server® oddity: the `SB-Messaging` adapter does not make use of the `CustomBrokeredMessagePropertyNamespace` context property in its own `XML` namespace, but uses instead the `CustomBrokeredPropertyNamespace` context property in the [WCF](https://docs.microsoft.com/en-us/dotnet/api/wcf) `XML` namespace, see [WcfProperties][wcf-properties.accelerators];
+
+- [SapProperties][sap-properties.accelerators] provides the accelerators for the Microsoft BizTalk Server®'s context properties related to the `SAP` adapter, see [Message Context Properties for Receiving IDOCs](https://docs.microsoft.com/en-us/biztalk/adapters-and-accelerators/adapter-sap/message-context-properties-for-receiving-idocs);
+
+- [SftpProperties][sftp-properties.accelerators] provides the accelerators for the Microsoft BizTalk Server®'s context properties related to the `SFTP` adapter, see [SFTP](https://docs.microsoft.com/en-us/dotnet/api/sftp) namespace;
+
+- [WcfProperties][wcf-properties.accelerators] provides the accelerators for the Microsoft BizTalk Server®'s context properties related to the `WCF` adapters, see [WCF](https://docs.microsoft.com/en-us/dotnet/api/wcf) namespace.
+
+## Context Properties
+
+For each context property that needs to be accessed via the previously mentioned API, a type deriving from `MessageContextPropertyBase` must be defined so that its `MessageContextProperty<T, TR>` accelerator counterpart can be defined in turn.
+
+However, not all of the standard or out-of-box context properties are backed by property schemas. They therefore do not have a corresponding `MessageContextPropertyBase`-derived type definition. To make these properties nonetheless usable through the `BizTalk.Factory` API, `Be.Stateless.BizTalk.Abstractions` fills the gap and provides plain `C#` type definitions &mdash;or pseudo property schemas&mdash; for the most meaningful ones.
+
+> **Remark** These context properties only need a plain `C#` type definition and should not be backed by property schemas as they are not intended to be used in publication/subscription filters.
+
+- [BizTalkFactory.Properties][biztalk-factory.properties] declares types for `BizTalk.Factory`'s own context properties that cannot be used in subscription filters;
+
+- [Edi.Properties][edi.properties] declares types for `EDI` context properties that do not have a corresponding `MessageContextPropertyBase`-derived type definition;
+
+- [Sftp.Properties][sftp.properties] declares types for `SFTP` context properties that do not have a corresponding `MessageContextPropertyBase`-derived type definition;
+
+- [System.Properties][system.properties] declares types for `BTS` core system context properties that do not have a corresponding `MessageContextPropertyBase`-derived type definition.
+
+> **Remark** Because these context properties now have corresponding type definitions, they can finally be used in [XLANG/s](https://docs.microsoft.com/en-us/biztalk/core/xlang-s-language) expressions too, for instances:\
+> `variable = message(EDI.BGM1_1)`\
+> or\
+> `message(Be.Stateless.BizTalk.Schemas.BizTalkFactory.DisableTransportRetries) = true`.\
+> They still, nonetheless, cannot be used in a subscription filter or correlation set.
+
+### Fluent API
+
+`Be.Stateless.BizTalk.Abstractions` also provides a fluent API, thanks to extension methods defined by the various classes in the [Be.Stateless.BizTalk.ContextProperties.Extensions][context-properties-extensions] namespace, to speed up and chain the assignment of the context properties it defines or brings to the surface.
+
+## Developer Help
+
+Detailed developer help has been provided as `XML` comments directly embedded in source code. Though developers usually browse through this documentation while developing thanks to, for instance, JetBrains [ReSharper][resharper] quick help &mdash;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>F1</kbd>, an online version of this inlined help has also been provided here for greater reachability:
+
+[![][help.badge]][help]
 
 <!-- links -->
-[GitHub]:https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions "Be.Stateless.BizTalk.Abstractions Git Repository"
-[Pipeline]:https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=40&branchName=master "Azure DevOps Build Pipeline"
-[NuGet Package]:https://www.nuget.org/packages/Be.Stateless.BizTalk.Abstractions/ "Be.Stateless.BizTalk.Abstractions NuGet Package"
+
+[help]: https://github.com/icraftsoftware/biztalk.factory.github.io/blob/master/Help/BizTalk/Abstractions/README.md "Be.Stateless.BizTalk.Abstractions Developer Help"
+[help.badge]: https://img.shields.io/static/v1?label=Be.Stateless.BizTalk.Abstractions&message=Developer%20Help&color=8CA1AF&logo=microsoftacademic
+[github]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions "Be.Stateless.BizTalk.Abstractions GitHub Repository"
+[github.badge]: https://img.shields.io/static/v1?label=Repository&message=Be.Stateless.BizTalk.Abstractions&logo=github
+[nuget]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Abstractions "Be.Stateless.BizTalk.Abstractions NuGet Package"
+[nuget.badge]: https://img.shields.io/nuget/v/Be.Stateless.BizTalk.Abstractions.svg?label=Be.Stateless.BizTalk.Abstractions&style=flat&logo=nuget
+[pipeline.ci]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=39&branchName=master "Azure DevOps Continuous Integration Build Pipeline"
+[pipeline.ci.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Abstractions%20Continuous%20Integration?branchName=master&label=Continuous%20Integration%20Build
+[pipeline.mr]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=40&branchName=master "Azure DevOps Release Build Pipeline"
+[pipeline.mr.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Abstractions%20Manual%20Release?branchName=master&label=Manual%20Release%20Build
+[release]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/releases/latest "Be.Stateless.BizTalk.Abstractions GitHub Release"
+[release.badge]: https://img.shields.io/github/v/release/icraftsoftware/Be.Stateless.BizTalk.Abstractions?label=Release&logo=github
+[base-message-extensions]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Message/Extensions/BaseMessage.cs "Be.Stateless.BizTalk.Message.Extensions.BaseMessage"
+[base-message-context-extensions]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Message/Extensions/BaseMessageContext.cs "Be.Stateless.BizTalk.Message.Extensions.BaseMessageContext"
+[context-properties-extensions]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/tree/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/Extensions
+[message-context-property-base]: https://docs.microsoft.com/en-us/dotnet/api/microsoft.xlangs.basetypes.messagecontextpropertybase?view=bts-2020 "Microsoft.XLANGs.BaseTypes.MessageContextPropertyBase"
+[message-context-property]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/MessageContextProperty.cs "Be.Stateless.BizTalk.ContextProperties.MessageContextProperty<T, TR>"
+[nullable]: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types
+[biztalk-factory-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/BizTalkFactoryProperties.cs
+[bts-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/BtsProperties.cs
+[edi-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/EdiProperties.cs
+[overridable-edi-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/OverridableEdiProperties.cs
+[error-report-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/ErrorReportProperties.cs
+[file-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/FileProperties.cs
+[http-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/HttpProperties.cs
+[pop3-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/Pop3Properties.cs
+[sb-messaging-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/SBMessagingProperties.cs
+[sap-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/SapProperties.cs
+[sftp-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/SftpProperties.cs
+[wcf-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/WcfProperties.cs
+[biztalk-factory.properties]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Schemas/BizTalkFactory/Properties.cs
+[edi.properties]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Schemas/Edi/Properties.cs
+[sftp.properties]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Schemas/Sftp/Properties.cs
+[system.properties]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Schemas/System/Properties.cs
 
 <!--
-cSpell:ignore XLANG biztalk
+cSpell:ignore biztalk overridable typeof XLANG
 -->

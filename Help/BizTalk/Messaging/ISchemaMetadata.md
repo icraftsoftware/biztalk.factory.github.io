@@ -1,0 +1,19 @@
+#### [Be.Stateless.BizTalk.Messaging](README.md 'README')
+### [Be.Stateless.BizTalk.Schema](Be.Stateless.BizTalk.Schema.md 'Be.Stateless.BizTalk.Schema')
+
+## ISchemaMetadata Interface
+
+```csharp
+public interface ISchemaMetadata
+```
+
+| Properties | |
+| :--- | :--- |
+| [Annotations](ISchemaMetadata.Annotations.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.Annotations') | Returns the annotations associated, and embedded, with a [Microsoft.XLANGs.BaseTypes.SchemaBase](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.XLANGs.BaseTypes.SchemaBase 'Microsoft.XLANGs.BaseTypes.SchemaBase')-derived envelope schema [Type](ISchemaMetadata.Type.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.Type'). |
+| [BodyXPath](ISchemaMetadata.BodyXPath.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.BodyXPath') | Returns the XPath expression to the node being the body of a [Microsoft.XLANGs.BaseTypes.SchemaBase](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.XLANGs.BaseTypes.SchemaBase 'Microsoft.XLANGs.BaseTypes.SchemaBase')-derived envelope schema [Type](ISchemaMetadata.Type.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.Type'). |
+| [DocumentSpec](ISchemaMetadata.DocumentSpec.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.DocumentSpec') | Returns the [DocumentSpec](ISchemaMetadata.DocumentSpec.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.DocumentSpec') of a given [Microsoft.XLANGs.BaseTypes.SchemaBase](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.XLANGs.BaseTypes.SchemaBase 'Microsoft.XLANGs.BaseTypes.SchemaBase')-derived envelope schema [Type](ISchemaMetadata.Type.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.Type'). |
+| [IsEnvelopeSchema](ISchemaMetadata.IsEnvelopeSchema.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.IsEnvelopeSchema') | Returns whether the [Microsoft.XLANGs.BaseTypes.SchemaBase](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.XLANGs.BaseTypes.SchemaBase 'Microsoft.XLANGs.BaseTypes.SchemaBase')-derived [Type](ISchemaMetadata.Type.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.Type') is an envelope schema. |
+| [MessageType](ISchemaMetadata.MessageType.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.MessageType') | Returns the [BTS.MessageType](https://docs.microsoft.com/en-us/dotnet/api/BTS.MessageType 'BTS.MessageType') that any message being an instance of the [Microsoft.XLANGs.BaseTypes.SchemaBase](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.XLANGs.BaseTypes.SchemaBase 'Microsoft.XLANGs.BaseTypes.SchemaBase')-derived [Type](ISchemaMetadata.Type.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.Type') will have. |
+| [RootElementName](ISchemaMetadata.RootElementName.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.RootElementName') | Returns the name of the root element of the [Microsoft.XLANGs.BaseTypes.SchemaBase](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.XLANGs.BaseTypes.SchemaBase 'Microsoft.XLANGs.BaseTypes.SchemaBase')-derived schema [Type](ISchemaMetadata.Type.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.Type'). |
+| [TargetNamespace](ISchemaMetadata.TargetNamespace.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.TargetNamespace') | Returns the target xml namespace of a [Microsoft.XLANGs.BaseTypes.SchemaBase](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.XLANGs.BaseTypes.SchemaBase 'Microsoft.XLANGs.BaseTypes.SchemaBase')-derived schema [Type](ISchemaMetadata.Type.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.Type'). |
+| [Type](ISchemaMetadata.Type.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.Type') | Returns the [Microsoft.XLANGs.BaseTypes.SchemaBase](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.XLANGs.BaseTypes.SchemaBase 'Microsoft.XLANGs.BaseTypes.SchemaBase')-derived [Type](ISchemaMetadata.Type.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata.Type') to which this [ISchemaMetadata](ISchemaMetadata.md 'Be.Stateless.BizTalk.Schema.ISchemaMetadata') is associated. |

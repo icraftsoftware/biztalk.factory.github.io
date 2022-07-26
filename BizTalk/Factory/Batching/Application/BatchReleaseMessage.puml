@@ -1,0 +1,28 @@
+﻿@startuml
+!theme metal
+skinparam BackgroundColor #282a36
+'skinparam LineType ortho
+skinparam Arrow {
+  Color #f8f8f2
+  FontColor #f8f8f2
+}
+skinparam Class {
+  BackgroundColor #44475a
+  BorderColor #f8f8f2
+  FontColor #f8f8f2
+}
+hide circle
+hide members
+left to right direction
+
+
+class ReleaseBatch
+class EnvelopeSpecName
+'class EnvironmentTag #line.dashed
+class Partition #line.dashed
+
+ReleaseBatch -- EnvelopeSpecName
+'ReleaseBatch -- EnvironmentTag
+ReleaseBatch -- Partition
+
+@enduml

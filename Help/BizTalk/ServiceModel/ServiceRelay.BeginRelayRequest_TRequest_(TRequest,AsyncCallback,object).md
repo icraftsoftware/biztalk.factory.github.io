@@ -1,0 +1,44 @@
+#### [Be.Stateless.BizTalk.ServiceModel](README.md 'README')
+### [Be.Stateless.BizTalk.ServiceModel](Be.Stateless.BizTalk.ServiceModel.md 'Be.Stateless.BizTalk.ServiceModel').[ServiceRelay](ServiceRelay.md 'Be.Stateless.BizTalk.ServiceModel.ServiceRelay')
+
+## ServiceRelay.BeginRelayRequest<TRequest>(TRequest, AsyncCallback, object) Method
+
+Begins an asynchronous operation to relay an [XmlMessage](XmlMessage.md 'Be.Stateless.BizTalk.ServiceModel.Channels.XmlMessage')-based request to the reply side of a
+request-reply message exchange.
+
+```csharp
+protected System.IAsyncResult BeginRelayRequest<TRequest>(TRequest request, System.AsyncCallback asyncCallback, object asyncState)
+    where TRequest : Be.Stateless.BizTalk.ServiceModel.Channels.XmlMessage;
+```
+#### Type parameters
+
+<a name='Be.Stateless.BizTalk.ServiceModel.ServiceRelay.BeginRelayRequest_TRequest_(TRequest,System.AsyncCallback,object).TRequest'></a>
+
+`TRequest`
+
+The type of the [XmlMessage](XmlMessage.md 'Be.Stateless.BizTalk.ServiceModel.Channels.XmlMessage')-based request.
+#### Parameters
+
+<a name='Be.Stateless.BizTalk.ServiceModel.ServiceRelay.BeginRelayRequest_TRequest_(TRequest,System.AsyncCallback,object).request'></a>
+
+`request` [TRequest](ServiceRelay.BeginRelayRequest_TRequest_(TRequest,AsyncCallback,object).md#Be.Stateless.BizTalk.ServiceModel.ServiceRelay.BeginRelayRequest_TRequest_(TRequest,System.AsyncCallback,object).TRequest 'Be.Stateless.BizTalk.ServiceModel.ServiceRelay.BeginRelayRequest<TRequest>(TRequest, System.AsyncCallback, object).TRequest')
+
+The [XmlMessage](XmlMessage.md 'Be.Stateless.BizTalk.ServiceModel.Channels.XmlMessage')-based request.
+
+<a name='Be.Stateless.BizTalk.ServiceModel.ServiceRelay.BeginRelayRequest_TRequest_(TRequest,System.AsyncCallback,object).asyncCallback'></a>
+
+`asyncCallback` [System.AsyncCallback](https://docs.microsoft.com/en-us/dotnet/api/System.AsyncCallback 'System.AsyncCallback')
+
+The [System.AsyncCallback](https://docs.microsoft.com/en-us/dotnet/api/System.AsyncCallback 'System.AsyncCallback') delegate that receives the notification of the completion of the asynchronous
+operation transmitting a request message.
+
+<a name='Be.Stateless.BizTalk.ServiceModel.ServiceRelay.BeginRelayRequest_TRequest_(TRequest,System.AsyncCallback,object).asyncState'></a>
+
+`asyncState` [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')
+
+An object, specified by the application, that contains state information associated with the asynchronous operation
+transmitting a request message.
+
+#### Returns
+[System.IAsyncResult](https://docs.microsoft.com/en-us/dotnet/api/System.IAsyncResult 'System.IAsyncResult')  
+The [System.IAsyncResult](https://docs.microsoft.com/en-us/dotnet/api/System.IAsyncResult 'System.IAsyncResult') that references the asynchronous message transmission.
