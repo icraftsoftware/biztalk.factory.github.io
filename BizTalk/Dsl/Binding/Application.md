@@ -115,8 +115,8 @@ Let us now have a look at how as a developer we can configure the [Receive Ports
 
 <!-- links -->
 
-[github.samples]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples
 [application-binding]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/ApplicationBinding.cs
+[github.samples]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples
 [target-environment]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Environment.Settings/Install/TargetEnvironment.cs
 
 <!--

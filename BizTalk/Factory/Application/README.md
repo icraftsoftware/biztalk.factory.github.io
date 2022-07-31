@@ -1,26 +1,22 @@
 ﻿# BizTalk.Factory Application
 
-<div class="badges">
-<div>
-
 [![][github.badge]][github]
 
-[![][release.badge]][release]
-
-</div>
-<div>
-
-[![][pipeline.ci.badge]][pipeline.ci]
+##### Build Pipelines
 
 [![][pipeline.mr.badge]][pipeline.mr]
 
-</div>
-<div>
+[![][pipeline.ci.badge]][pipeline.ci]
+
+##### Latest Release
 
 [![][package.badge]][package]
 
-</div>
-</div>
+[![][release.badge]][release]
+
+##### Release Preview
+
+<!-- TODO preview deployment packages -->
 
 ## Overview
 
@@ -44,18 +40,18 @@ SsoConfigStore
     Be.Stateless.BizTalk.Factory.Settings
 -->
 
-<!-- links -->
+<!-- badges -->
 
-[github]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Application "Be.Stateless.BizTalk.Factory.Application GitHub Repository"
 [github.badge]: https://img.shields.io/static/v1?label=Repository&message=Be.Stateless.BizTalk.Factory.Application&logo=github
-[package]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Application/releases/latest/download/Be.Stateless.BizTalk.Factory.Application.Deployment.zip "Be.Stateless.BizTalk.Factory.Application Deployment Package"
+[github]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Application "Be.Stateless.BizTalk.Factory.Application GitHub Repository"
 [package.badge]: https://img.shields.io/github/v/release/icraftsoftware/Be.Stateless.BizTalk.Factory.Application?label=Be.Stateless.BizTalk.Factory.Application.Deployment.zip&style=flat&logo=github
-[pipeline.ci]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=85&branchName=master "Azure DevOps Continuous Integration Build Pipeline"
+[package]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Application/releases/latest/download/Be.Stateless.BizTalk.Factory.Application.Deployment.zip "Be.Stateless.BizTalk.Factory.Application Deployment Package"
 [pipeline.ci.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Factory.Application%20Continuous%20Integration?branchName=master&label=Continuous%20Integration%20Build
-[pipeline.mr]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=86&branchName=master "Azure DevOps Release Build Pipeline"
+[pipeline.ci]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=85&branchName=master "Be.Stateless.BizTalk.Factory.Application Continuous Integration Build Pipeline"
 [pipeline.mr.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Factory.Application%20Manual%20Release?branchName=master&label=Manual%20Release%20Build
-[release]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Application/releases/latest "Be.Stateless.BizTalk.Factory.Application GitHub Release"
+[pipeline.mr]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=86&branchName=master "Be.Stateless.BizTalk.Factory.Application Manual Release Build Pipeline"
 [release.badge]: https://img.shields.io/github/v/release/icraftsoftware/Be.Stateless.BizTalk.Factory.Application?label=Release&logo=github
+[release]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Application/releases/latest "Be.Stateless.BizTalk.Factory.Application GitHub Release"
 
 <!--
 cSpell:ignore BizTalkFactoryMgmtDb

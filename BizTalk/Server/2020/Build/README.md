@@ -1,1 +1,0 @@
-﻿# BizTalk.Server.2020.Build

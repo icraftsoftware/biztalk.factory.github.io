@@ -2,9 +2,7 @@
 
 The following component diagram shows a comprehensive view of the components that are part of the `BizTalk.Factory Runtime` package where all the direct dependencies between components have been made explicit.
 
-![Component Diagram](./../../../assets/images/BizTalk.Factory.Runtime.ComponentModel.png)
-
-<!-- ![Component Diagram][component.diagram] -->
+![Component Diagram][component.diagram]
 
 <!-- links -->
 
