@@ -1,0 +1,29 @@
+#### [Be.Stateless.BizTalk.Activity.Tracking](README.md 'README')
+### [Be.Stateless.BizTalk.Runtime.Caching](Be.Stateless.BizTalk.Runtime.Caching.md 'Be.Stateless.BizTalk.Runtime.Caching').[TrackingContextCache](TrackingContextCache.md 'Be.Stateless.BizTalk.Runtime.Caching.TrackingContextCache')
+
+## TrackingContextCache.Remove(string) Method
+
+Removes and returns a previously cached [TrackingContext](TrackingContext.md 'Be.Stateless.BizTalk.Activity.Tracking.TrackingContext').
+
+```csharp
+public virtual Be.Stateless.BizTalk.Activity.Tracking.TrackingContext Remove(string key);
+```
+#### Parameters
+
+<a name='Be.Stateless.BizTalk.Runtime.Caching.TrackingContextCache.Remove(string).key'></a>
+
+`key` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
+
+The cache entry identifier, or key, of the [TrackingContext](TrackingContext.md 'Be.Stateless.BizTalk.Activity.Tracking.TrackingContext') to retrieve and erase.
+
+#### Returns
+[TrackingContext](TrackingContext.md 'Be.Stateless.BizTalk.Activity.Tracking.TrackingContext')  
+The [TrackingContext](TrackingContext.md 'Be.Stateless.BizTalk.Activity.Tracking.TrackingContext') that had been previously added to the cache.
+
+#### Exceptions
+
+[System.ArgumentNullException](https://docs.microsoft.com/en-us/dotnet/api/System.ArgumentNullException 'System.ArgumentNullException')  
+The key is null or empty.
+
+[System.InvalidOperationException](https://docs.microsoft.com/en-us/dotnet/api/System.InvalidOperationException 'System.InvalidOperationException')  
+No entry has been found in cache for the given [key](TrackingContextCache.Remove(string).md#Be.Stateless.BizTalk.Runtime.Caching.TrackingContextCache.Remove(string).key 'Be.Stateless.BizTalk.Runtime.Caching.TrackingContextCache.Remove(string).key').

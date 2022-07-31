@@ -167,6 +167,9 @@ BackupTransport.Value.ServiceWindow = new ServiceWindow { StartTime = new Time(1
 <!-- links -->
 
 [github.samples]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples
+
+<!--  -->
+
 [filter-fixture]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding.Tests/Dsl/Binding/Subscription/FilterFixture.cs
 [lazy-of-t]: https://docs.microsoft.com/en-us/dotnet/api/system.lazy-1?view=netframework-4.8
 [send-port-filters]: ./../../../assets/images/SendPort.Filters.png

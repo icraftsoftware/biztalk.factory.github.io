@@ -1,0 +1,50 @@
+#### [Be.Stateless.BizTalk.Dsl.Binding](README.md 'README')
+### [Be.Stateless.BizTalk.Dsl.Binding.Adapter](Be.Stateless.BizTalk.Dsl.Binding.Adapter.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter').[WcfNetTcpAdapter](WcfNetTcpAdapter.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter')
+
+## WcfNetTcpAdapter.Inbound Class
+
+The WCF-NetTcp adapter provides connected cross-computer or cross-process communication in an environment in which
+both services and clients are WCF based. It provides full access to SOAP security, reliability, and transaction
+features. This adapter uses the TCP transport, and messages have binary encoding.
+
+```csharp
+public class WcfNetTcpAdapter.Inbound : Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter<Microsoft.BizTalk.Adapter.Wcf.Config.NetTcpRLConfig>,
+Be.Stateless.BizTalk.Dsl.Binding.Adapter.IInboundAdapter,
+Be.Stateless.BizTalk.Dsl.Binding.Adapter.IAdapter,
+Be.Stateless.BizTalk.Dsl.ISupportValidation,
+Be.Stateless.BizTalk.Dsl.Binding.Adapter.IAdapterConfigInboundIncludeExceptionDetailInFaults,
+Be.Stateless.BizTalk.Dsl.Binding.Adapter.IAdapterConfigInboundSuspendRequestMessageOnFailure,
+Be.Stateless.BizTalk.Dsl.Binding.Adapter.IAdapterConfigMaxConcurrentCalls,
+Be.Stateless.BizTalk.Dsl.Binding.Adapter.IAdapterConfigServiceCertificate,
+Be.Stateless.BizTalk.Dsl.Binding.Adapter.IAdapterConfigSSO
+```
+
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [AdapterBase](AdapterBase.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.AdapterBase') &#129106; [Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfAdapterBase&lt;](WcfAdapterBase_TAddress,TBinding,TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfAdapterBase<TAddress,TBinding,TConfig>')[System.ServiceModel.EndpointAddress](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.EndpointAddress 'System.ServiceModel.EndpointAddress')[,](WcfAdapterBase_TAddress,TBinding,TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfAdapterBase<TAddress,TBinding,TConfig>')[System.ServiceModel.Configuration.NetTcpBindingElement](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.Configuration.NetTcpBindingElement 'System.ServiceModel.Configuration.NetTcpBindingElement')[,](WcfAdapterBase_TAddress,TBinding,TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfAdapterBase<TAddress,TBinding,TConfig>')[Microsoft.BizTalk.Adapter.Wcf.Config.NetTcpRLConfig](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.BizTalk.Adapter.Wcf.Config.NetTcpRLConfig 'Microsoft.BizTalk.Adapter.Wcf.Config.NetTcpRLConfig')[&gt;](WcfAdapterBase_TAddress,TBinding,TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfAdapterBase<TAddress,TBinding,TConfig>') &#129106; [Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfOneWayAdapterBase&lt;](WcfOneWayAdapterBase_TAddress,TBinding,TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfOneWayAdapterBase<TAddress,TBinding,TConfig>')[System.ServiceModel.EndpointAddress](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.EndpointAddress 'System.ServiceModel.EndpointAddress')[,](WcfOneWayAdapterBase_TAddress,TBinding,TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfOneWayAdapterBase<TAddress,TBinding,TConfig>')[System.ServiceModel.Configuration.NetTcpBindingElement](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.Configuration.NetTcpBindingElement 'System.ServiceModel.Configuration.NetTcpBindingElement')[,](WcfOneWayAdapterBase_TAddress,TBinding,TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfOneWayAdapterBase<TAddress,TBinding,TConfig>')[Microsoft.BizTalk.Adapter.Wcf.Config.NetTcpRLConfig](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.BizTalk.Adapter.Wcf.Config.NetTcpRLConfig 'Microsoft.BizTalk.Adapter.Wcf.Config.NetTcpRLConfig')[&gt;](WcfOneWayAdapterBase_TAddress,TBinding,TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfOneWayAdapterBase<TAddress,TBinding,TConfig>') &#129106; [Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfTwoWayAdapterBase&lt;](WcfTwoWayAdapterBase_TAddress,TBinding,TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfTwoWayAdapterBase<TAddress,TBinding,TConfig>')[System.ServiceModel.EndpointAddress](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.EndpointAddress 'System.ServiceModel.EndpointAddress')[,](WcfTwoWayAdapterBase_TAddress,TBinding,TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfTwoWayAdapterBase<TAddress,TBinding,TConfig>')[System.ServiceModel.Configuration.NetTcpBindingElement](https://docs.microsoft.com/en-us/dotnet/api/System.ServiceModel.Configuration.NetTcpBindingElement 'System.ServiceModel.Configuration.NetTcpBindingElement')[,](WcfTwoWayAdapterBase_TAddress,TBinding,TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfTwoWayAdapterBase<TAddress,TBinding,TConfig>')[Microsoft.BizTalk.Adapter.Wcf.Config.NetTcpRLConfig](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.BizTalk.Adapter.Wcf.Config.NetTcpRLConfig 'Microsoft.BizTalk.Adapter.Wcf.Config.NetTcpRLConfig')[&gt;](WcfTwoWayAdapterBase_TAddress,TBinding,TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfTwoWayAdapterBase<TAddress,TBinding,TConfig>') &#129106; [Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter&lt;](WcfNetTcpAdapter_TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter<TConfig>')[Microsoft.BizTalk.Adapter.Wcf.Config.NetTcpRLConfig](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.BizTalk.Adapter.Wcf.Config.NetTcpRLConfig 'Microsoft.BizTalk.Adapter.Wcf.Config.NetTcpRLConfig')[&gt;](WcfNetTcpAdapter_TConfig_.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter<TConfig>') &#129106; Inbound
+
+Implements [IInboundAdapter](IInboundAdapter.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.IInboundAdapter'), [IAdapter](IAdapter.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.IAdapter'), [Be.Stateless.BizTalk.Dsl.ISupportValidation](https://docs.microsoft.com/en-us/dotnet/api/Be.Stateless.BizTalk.Dsl.ISupportValidation 'Be.Stateless.BizTalk.Dsl.ISupportValidation'), [IAdapterConfigInboundIncludeExceptionDetailInFaults](IAdapterConfigInboundIncludeExceptionDetailInFaults.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.IAdapterConfigInboundIncludeExceptionDetailInFaults'), [IAdapterConfigInboundSuspendRequestMessageOnFailure](IAdapterConfigInboundSuspendRequestMessageOnFailure.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.IAdapterConfigInboundSuspendRequestMessageOnFailure'), [IAdapterConfigMaxConcurrentCalls](IAdapterConfigMaxConcurrentCalls.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.IAdapterConfigMaxConcurrentCalls'), [IAdapterConfigServiceCertificate](IAdapterConfigServiceCertificate.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.IAdapterConfigServiceCertificate'), [IAdapterConfigSSO](IAdapterConfigSSO.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.IAdapterConfigSSO')
+
+### Remarks
+You use the WCF-NetTcp receive adapter to receive WCF service requests through the TCP protocol. A receive location
+that uses the WCF-NetTcp receive adapter can be configured as one-way or request-response (two-way).
+
+### See Also
+- [What Is the WCF-NetTcp Adapter?](https://docs.microsoft.com/en-us/biztalk/core/what-is-the-wcf-nettcp-adapter 'https://docs.microsoft.com/en-us/biztalk/core/what-is-the-wcf-nettcp-adapter')
+- [How to
+            Configure a WCF-NetTcp Receive Location](https://docs.microsoft.com/en-us/biztalk/core/how-to-configure-a-wcf-nettcp-receive-location 'https://docs.microsoft.com/en-us/biztalk/core/how-to-configure-a-wcf-nettcp-receive-location')
+- [WCF-NetTcp Transport Properties Dialog Box, Receive, Security Tab](https://docs.microsoft.com/en-us/biztalk/core/technical-reference/wcf-nettcp-transport-properties-dialog-box-receive-security-tab 'https://docs.microsoft.com/en-us/biztalk/core/technical-reference/wcf-nettcp-transport-properties-dialog-box-receive-security-tab')
+- [WCF
+            Adapters Property Schema and Properties](https://docs.microsoft.com/en-us/biztalk/core/wcf-adapters-property-schema-and-properties 'https://docs.microsoft.com/en-us/biztalk/core/wcf-adapters-property-schema-and-properties')
+
+| Constructors | |
+| :--- | :--- |
+| [Inbound()](WcfNetTcpAdapter.Inbound.Inbound().md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter.Inbound.Inbound()') | |
+| [Inbound(Action&lt;Inbound&gt;)](WcfNetTcpAdapter.Inbound.Inbound(Action_Inbound_).md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter.Inbound.Inbound(System.Action<Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter.Inbound>)') | |
+
+| Properties | |
+| :--- | :--- |
+| [IncludeExceptionDetailInFaults](WcfNetTcpAdapter.Inbound.IncludeExceptionDetailInFaults.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter.Inbound.IncludeExceptionDetailInFaults') | |
+| [LeaseTimeout](WcfNetTcpAdapter.Inbound.LeaseTimeout.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter.Inbound.LeaseTimeout') | Specify the maximum lifetime of an active pooled connection. After the specified time elapses, the connection closes after the current request is serviced. |
+| [MaxConcurrentCalls](WcfNetTcpAdapter.Inbound.MaxConcurrentCalls.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter.Inbound.MaxConcurrentCalls') | |
+| [ServiceCertificate](WcfNetTcpAdapter.Inbound.ServiceCertificate.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter.Inbound.ServiceCertificate') | Specify the thumbprint of the X.509 certificate for this receive location that the clients use to authenticate the service. The certificate to be used for this property must be installed into the My store in the Current User location. |
+| [SuspendRequestMessageOnFailure](WcfNetTcpAdapter.Inbound.SuspendRequestMessageOnFailure.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter.Inbound.SuspendRequestMessageOnFailure') | |
+| [UseSSO](WcfNetTcpAdapter.Inbound.UseSSO.md 'Be.Stateless.BizTalk.Dsl.Binding.Adapter.WcfNetTcpAdapter.Inbound.UseSSO') | Specify whether to use Enterprise Single Sign-On (SSO) to retrieve client credentials to issue an SSO ticket. |

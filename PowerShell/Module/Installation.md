@@ -1,6 +1,6 @@
 ﻿# `PowerShell` Module Installation
 
-Depending on the [execution policy][about_execution_policies] configuration level of your `PowerShell` &mdash;you can verify it with the [`Get-ExecutionPolicy`][get-executionpolicy] command,&mdash; you might have to trust the certificate that was used to sign the `BizTalk.Factory`'s `PowerShell` modules in order to install them right from the PowerShell Gallery.
+Depending on the [execution policy][about_execution_policies] configuration level of your `PowerShell` &mdash;you can verify it with the [`Get-ExecutionPolicy`][get-executionpolicy] command,&mdash; you might have to trust the certificate that was used to sign the `BizTalk.Factory`'s `PowerShell` modules in order to install them right from the `PowerShell` Gallery.
 
 Run the following `PowerShell` commands should the execution policy level be set to `RemoteSigned` &mdash;they merely download and install the certificate's public key in the `Trusted People` store underneath the `Local Machine` certificate store:
 

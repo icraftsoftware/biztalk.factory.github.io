@@ -1,17 +1,4 @@
 ﻿---
 ---
 
-@import "jekyll-theme-dracula";
-.wrapper {
-  max-width: 1050px;
-}
-.wrapper section {
-  max-width: inherit;
-}
-.badges {
-  display: flex;
-  column-gap: 5px;
-  flex-flow: row wrap;
-  margin-top: 3em;
-  margin-bottom: 1em;
-}
+@import "theme-darkms";

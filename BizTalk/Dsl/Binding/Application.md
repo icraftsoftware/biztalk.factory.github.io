@@ -53,7 +53,9 @@ Thanks to this fixture, the whole `Accounting` application bindings would be gen
 
 > **Remark** `BizTalk.Factory` defines a bunch of target environment names in the [Be.Stateless.BizTalk.Install.TargetEnvironment][target-environment] class, available in the `Be.Stateless.BizTalk.Dsl.Environment.Settings` `NuGet` package.
 
-Notice that if the developer wishes to generate the `XML` bindings files on disk, he could write the following code, which would produce a file for each target environment every time the unit tests are run:
+## Test Generating the `XML` Application Bindings
+
+If the developer wishes to generate the `XML` bindings files on disk, he could write the following code, which would produce a file for each target environment every time the unit tests are run &mdash;should `NUnit` testing framework be used then the test method could be qualified by the [`Explicit`][nunit-explicit-attribute] attribute so as to only generate the `XML` binding files when required:
 
 ```csharp
 using System.IO;
@@ -115,8 +117,9 @@ Let us now have a look at how as a developer we can configure the [Receive Ports
 
 <!-- links -->
 
-[github.samples]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples
 [application-binding]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/ApplicationBinding.cs
+[github.samples]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples
+[nunit-explicit-attribute]: https://docs.nunit.org/articles/nunit/writing-tests/attributes/explicit.html
 [target-environment]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Environment.Settings/Install/TargetEnvironment.cs
 
 <!--

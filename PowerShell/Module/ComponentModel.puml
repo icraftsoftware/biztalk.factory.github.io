@@ -1,11 +1,16 @@
 ﻿@startuml
 !theme metal
-'skinparam BackgroundColor #282a36
-skinparam ArrowColor #f8f8f2
+'skinparam BackgroundColor #333333
 skinparam LineType ortho
-skinparam ComponentBackgroundColor #44475a
-skinparam ComponentBorderColor #f8f8f2
-skinparam ComponentFontColor #f8f8f2
+skinparam Arrow {
+  Color #F0FFFF
+  FontColor #F0FFFF
+}
+skinparam Component {
+  BackgroundColor #444444
+  BorderColor #F0FFFF
+  FontColor #F0FFFF
+}
 [Dsl.Configuration]
 '[Gac]
 '[InvokeBuild]

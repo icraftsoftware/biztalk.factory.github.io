@@ -171,17 +171,20 @@ sp.SendPipeline = new SendPipeline<FFTransmit>(
 <!-- links -->
 
 [github.samples]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples
+
+<!--  -->
+
 [i-component-list]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Pipeline/blob/master/src/Be.Stateless.BizTalk.Dsl.Pipeline/Dsl/Pipeline/IComponentList.cs
-[i-stage]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Pipeline/blob/master/src/Be.Stateless.BizTalk.Dsl.Pipeline/Dsl/Pipeline/IStage.cs
 [i-receive-pipeline-stage-list]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Pipeline/blob/master/src/Be.Stateless.BizTalk.Dsl.Pipeline/Dsl/Pipeline/IReceivePipelineStageList.cs
 [i-send-pipeline-stage-list]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Pipeline/blob/master/src/Be.Stateless.BizTalk.Dsl.Pipeline/Dsl/Pipeline/ISendPipelineStageList.cs
+[i-stage]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Pipeline/blob/master/src/Be.Stateless.BizTalk.Dsl.Pipeline/Dsl/Pipeline/IStage.cs
 [message-endpoint]: https://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageEndpoint.html
 [receive-pipeline-dsl-grammar-variant]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding.Tests/Dsl/Binding/Xml/Serialization/PipelineBindingInfoSerializerFixture.cs#L39
-[receive-pipeline-of-t]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/ReceivePipeline.cs
 [receive-pipeline-intellisense]: ./../../../assets/images/ReceivePipeline.Intellisense.png
+[receive-pipeline-of-t]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/ReceivePipeline.cs
 [send-pipeline-dsl-grammar-variant]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding.Tests/Dsl/Binding/Xml/Serialization/PipelineBindingInfoSerializerFixture.cs#L345
-[send-pipeline-of-t]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/SendPipeline.cs
 [send-pipeline-intellisense]: ./../../../assets/images/SendPipeline.Intellisense.png
+[send-pipeline-of-t]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/SendPipeline.cs
 
 <!--
 cSpell:ignore Anization Dasm typeof

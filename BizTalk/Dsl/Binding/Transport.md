@@ -186,7 +186,7 @@ Transport.RetryPolicy = RetryPolicy.Default;
 
 Recall that a custom [`RetryPolicy`][retry-policy] class could be written in an environment sensitive way &mdash;see [Environment Overrides](./EnvironmentOverrides.md)&mdash; so as to be given the opportunity to provide different configurations according to the target environments for which the application bindings are generated.
 
-`BizTalk.Factory`'s `Binding DSL` has done precisely that and comes with a predefined set of environment sensitive [`RetryPolicies`][environment-sensitive-retry-policy] made available together with its [Naming Convention](./NamingConvention.md) &mdash;see [Be.Stateless.BizTalk.Dsl.Binding.Conventions][nuget.conventions] NuGet package. `BizTalk.Factory` defines three _not so arbitrary_ retry policies:
+`BizTalk.Factory`'s `Binding DSL` has done precisely that and comes with a predefined set of environment sensitive [`RetryPolicies`][environment-sensitive-retry-policy] made available together with its [Naming Convention](./NamingConvention.md) &mdash;see [Be.Stateless.BizTalk.Dsl.Binding.Conventions][nuget.conventions] `NuGet` package. `BizTalk.Factory` defines three _not so arbitrary_ retry policies:
 
 - a `RealTime` one, which features no retry at all;
 - a `ShortRunning` one, which features 6 retries, one every 5 minutes, thus attempting to deliver a message for a total period of 30 minutes;
@@ -228,7 +228,7 @@ Transport.ServiceWindow = new ServiceWindow {
 <!--  -->
 
 [application-fixture]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples/blob/master/src/Org.Anization.Accounting.Bindings.Tests/ApplicationFixture.cs
-[bribe-receive-location]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples/blob/master/src/Org.Anization.Accounting.Bindings/ReceiveLocations/BribeReceiveLocation.
+[bribe-receive-location]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples/blob/master/src/Org.Anization.Accounting.Bindings/ReceiveLocations/BribeReceiveLocation.cs
 [credit-note-receive-location]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples/blob/master/src/Org.Anization.Accounting.Bindings/Application.cs#L45
 [environment-sensitive-retry-policy]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding.Conventions/Dsl/Binding/Convention/RetryPolicy.cs
 [extern-alias]: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/extern-alias

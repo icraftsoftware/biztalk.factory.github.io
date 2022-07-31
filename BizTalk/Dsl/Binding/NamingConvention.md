@@ -4,7 +4,7 @@
 
 `BizTalk.Factory` has baked support into its `Binding DSL` for naming Microsoft BizTalk Server® artifacts such as applications, receive ports and locations, and send ports &mdash;see [INamingConvention][i-naming-convention] and [ISupportNameResolution][i-support-name-resolution]&mdash; and comes with a few ready-to-use custom naming conventions too.
 
-Strictly speaking, the [Be.Stateless.BizTalk.Dsl.Binding][nuget] NuGet package provides the support for artifact naming conventions but only comes with one **unstructured** [`string`-only naming convention][application-binding-convention-string], which is the convention that has been used throughout our sample application so far. This allowed us to write binding configuration code as follows, where the name of an artifact can just be any `string` literal:
+Strictly speaking, the [Be.Stateless.BizTalk.Dsl.Binding][nuget] `NuGet` package provides the support for artifact naming conventions but only comes with one **unstructured** [`string`-only naming convention][application-binding-convention-string], which is the convention that has been used throughout our sample application so far. This allowed us to write binding configuration code as follows, where the name of an artifact can just be any `string` literal:
 
 ```csharp
 using Be.Stateless.BizTalk.Dsl.Binding;
@@ -25,7 +25,7 @@ public class Application : ApplicationBinding
       ...
 ```
 
-The [Be.Stateless.BizTalk.Dsl.Binding.Conventions][nuget.conventions] NuGet package, on the other hand, provides both a [simple][simple-naming-convention] and a [detailed][detailed-naming-convention] **structured** naming conventions. The developer is invited to have a look at sample application bindings making use of the [simple][simple-naming-convention-sample] and [detailed][detailed-naming-convention-sample] naming conventions.
+The [Be.Stateless.BizTalk.Dsl.Binding.Conventions][nuget.conventions] `NuGet` package, on the other hand, provides both a [simple][simple-naming-convention] and a [detailed][detailed-naming-convention] **structured** naming conventions. The developer is invited to have a look at sample application bindings making use of the [simple][simple-naming-convention-sample] and [detailed][detailed-naming-convention-sample] naming conventions.
 
 From these samples, there are a few key concepts that one needs to grasp. The actual application binding configuration class the developer writes derives from a base class accepting a naming convention as a generic type argument, see for instance [ApplicationBinding][application-binding-convention-structured]. This base class defines protected factory members that bootstraps the naming convention for any given artifact, e.g. `ApplicationName`, `ReceivePortName`, `ReceiveLocationName`, and `SendPortName`. These factory members allows for the following code to be written, where the name of an artifact can only be assigned a structured expression rooted in one of them:
 
@@ -94,9 +94,9 @@ Finally, the detailed naming convention is similar to simple one, but furthermor
 
 <!-- links -->
 
-[nuget]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Dsl.Binding "Be.Stateless.BizTalk.Dsl.Binding NuGet Package"
-[nuget.conventions]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Dsl.Binding.Conventions
 [github.samples]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples
+[nuget.conventions]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Dsl.Binding.Conventions
+[nuget]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Dsl.Binding "Be.Stateless.BizTalk.Dsl.Binding NuGet Package"
 
 <!--  -->
 
