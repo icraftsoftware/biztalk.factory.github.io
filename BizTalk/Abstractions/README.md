@@ -1,26 +1,22 @@
 ﻿# Be.Stateless.BizTalk.Abstractions
 
-<div class="badges">
-<div>
-
 [![][github.badge]][github]
 
-[![][release.badge]][release]
-
-</div>
-<div>
-
-[![][pipeline.ci.badge]][pipeline.ci]
+##### Build Pipelines
 
 [![][pipeline.mr.badge]][pipeline.mr]
 
-</div>
-<div>
+[![][pipeline.ci.badge]][pipeline.ci]
+
+##### Latest Release
 
 [![][nuget.badge]][nuget]
 
-</div>
-</div>
+[![][release.badge]][release]
+
+##### Release Preview
+
+[![][nuget.preview.badge]][nuget.preview]
 
 ## Overview
 
@@ -191,42 +187,52 @@ Detailed developer help has been provided as `XML` comments directly embedded in
 
 [![][help.badge]][help]
 
+<!-- badges -->
+
+[doc.main.badge]: https://img.shields.io/static/v1?label=BizTalk.Factory%20SDK&message=User's%20Guide&color=8CA1AF&logo=readthedocs
+[doc.main]: https://www.stateless.be/ "BizTalk.Factory SDK User's Guide"
+[doc.this.badge]: https://img.shields.io/static/v1?label=Be.Stateless.BizTalk.Abstractions&message=User's%20Guide&color=8CA1AF&logo=readthedocs
+[doc.this]: https://www.stateless.be/BizTalk/Abstractions "Be.Stateless.BizTalk.Abstractions User's Guide"
+[github.badge]: https://img.shields.io/static/v1?label=Repository&message=Be.Stateless.BizTalk.Abstractions&logo=github
+[github]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions "Be.Stateless.BizTalk.Abstractions GitHub Repository"
+[help.badge]: https://img.shields.io/static/v1?label=Be.Stateless.BizTalk.Abstractions&message=Developer%20Help&color=8CA1AF&logo=microsoftacademic
+[help]: https://github.com/icraftsoftware/biztalk.factory.github.io/blob/master/Help/BizTalk/Abstractions/README.md "Be.Stateless.BizTalk.Abstractions Developer Help"
+[nuget.badge]: https://img.shields.io/nuget/v/Be.Stateless.BizTalk.Abstractions.svg?label=Be.Stateless.BizTalk.Abstractions&style=flat&logo=nuget
+[nuget]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Abstractions "Be.Stateless.BizTalk.Abstractions NuGet Package"
+[nuget.preview.badge]: https://badge-factory.azurewebsites.net/package/icraftsoftware/be.stateless/BizTalk.Factory.Preview/Be.Stateless.BizTalk.Abstractions?logo=nuget
+[nuget.preview]: https://dev.azure.com/icraftsoftware/be.stateless/_packaging?_a=package&feed=BizTalk.Factory.Preview&package=Be.Stateless.BizTalk.Abstractions&protocolType=NuGet "Be.Stateless.BizTalk.Abstractions Preview NuGet Package"
+[pipeline.ci.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Abstractions%20Continuous%20Integration?branchName=master&label=Continuous%20Integration%20Build
+[pipeline.ci]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=39&branchName=master "Be.Stateless.BizTalk.Abstractions Continuous Integration Build Pipeline"
+[pipeline.mr.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Abstractions%20Manual%20Release?branchName=master&label=Manual%20Release%20Build
+[pipeline.mr]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=40&branchName=master "Be.Stateless.BizTalk.Abstractions Manual Release Build Pipeline"
+[release.badge]: https://img.shields.io/github/v/release/icraftsoftware/Be.Stateless.BizTalk.Abstractions?label=Release&logo=github
+[release]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/releases/latest "Be.Stateless.BizTalk.Abstractions GitHub Release"
+
 <!-- links -->
 
-[help]: https://github.com/icraftsoftware/biztalk.factory.github.io/blob/master/Help/BizTalk/Abstractions/README.md "Be.Stateless.BizTalk.Abstractions Developer Help"
-[help.badge]: https://img.shields.io/static/v1?label=Be.Stateless.BizTalk.Abstractions&message=Developer%20Help&color=8CA1AF&logo=microsoftacademic
-[github]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions "Be.Stateless.BizTalk.Abstractions GitHub Repository"
-[github.badge]: https://img.shields.io/static/v1?label=Repository&message=Be.Stateless.BizTalk.Abstractions&logo=github
-[nuget]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Abstractions "Be.Stateless.BizTalk.Abstractions NuGet Package"
-[nuget.badge]: https://img.shields.io/nuget/v/Be.Stateless.BizTalk.Abstractions.svg?label=Be.Stateless.BizTalk.Abstractions&style=flat&logo=nuget
-[pipeline.ci]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=39&branchName=master "Azure DevOps Continuous Integration Build Pipeline"
-[pipeline.ci.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Abstractions%20Continuous%20Integration?branchName=master&label=Continuous%20Integration%20Build
-[pipeline.mr]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=40&branchName=master "Azure DevOps Release Build Pipeline"
-[pipeline.mr.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Abstractions%20Manual%20Release?branchName=master&label=Manual%20Release%20Build
-[release]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/releases/latest "Be.Stateless.BizTalk.Abstractions GitHub Release"
-[release.badge]: https://img.shields.io/github/v/release/icraftsoftware/Be.Stateless.BizTalk.Abstractions?label=Release&logo=github
-[base-message-extensions]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Message/Extensions/BaseMessage.cs "Be.Stateless.BizTalk.Message.Extensions.BaseMessage"
 [base-message-context-extensions]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Message/Extensions/BaseMessageContext.cs "Be.Stateless.BizTalk.Message.Extensions.BaseMessageContext"
-[context-properties-extensions]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/tree/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/Extensions
-[message-context-property-base]: https://docs.microsoft.com/en-us/dotnet/api/microsoft.xlangs.basetypes.messagecontextpropertybase?view=bts-2020 "Microsoft.XLANGs.BaseTypes.MessageContextPropertyBase"
-[message-context-property]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/MessageContextProperty.cs "Be.Stateless.BizTalk.ContextProperties.MessageContextProperty<T, TR>"
-[nullable]: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types
+[base-message-extensions]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Message/Extensions/BaseMessage.cs "Be.Stateless.BizTalk.Message.Extensions.BaseMessage"
 [biztalk-factory-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/BizTalkFactoryProperties.cs
+[biztalk-factory.properties]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Schemas/BizTalkFactory/Properties.cs
 [bts-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/BtsProperties.cs
+[context-properties-extensions]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/tree/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/Extensions
 [edi-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/EdiProperties.cs
-[overridable-edi-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/OverridableEdiProperties.cs
+[edi.properties]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Schemas/Edi/Properties.cs
 [error-report-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/ErrorReportProperties.cs
 [file-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/FileProperties.cs
 [http-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/HttpProperties.cs
+[message-context-property-base]: https://docs.microsoft.com/en-us/dotnet/api/microsoft.xlangs.basetypes.messagecontextpropertybase?view=bts-2020 "Microsoft.XLANGs.BaseTypes.MessageContextPropertyBase"
+[message-context-property]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/MessageContextProperty.cs "Be.Stateless.BizTalk.ContextProperties.MessageContextProperty<T, TR>"
+[nullable]: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types
+[overridable-edi-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/OverridableEdiProperties.cs
 [pop3-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/Pop3Properties.cs
-[sb-messaging-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/SBMessagingProperties.cs
+[resharper]: https://www.jetbrains.com/resharper/
 [sap-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/SapProperties.cs
+[sb-messaging-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/SBMessagingProperties.cs
 [sftp-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/SftpProperties.cs
-[wcf-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/WcfProperties.cs
-[biztalk-factory.properties]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Schemas/BizTalkFactory/Properties.cs
-[edi.properties]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Schemas/Edi/Properties.cs
 [sftp.properties]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Schemas/Sftp/Properties.cs
 [system.properties]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/Schemas/System/Properties.cs
+[wcf-properties.accelerators]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Abstractions/blob/master/src/Be.Stateless.BizTalk.Abstractions/ContextProperties/WcfProperties.cs
 
 <!--
 cSpell:ignore biztalk overridable typeof XLANG

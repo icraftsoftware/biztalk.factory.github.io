@@ -1,19 +1,10 @@
-﻿name: BizTalk.Factory SDK Pages
-title: BizTalk.Factory SDK
-description: "User's Guide"
-show_downloads: "true"
-show_header: "true"
+﻿title: BizTalk.Factory SDK
+description: User's Guide
+# https://assets.webiconspng.com/uploads/2017/09/Rockets-PNG-Image-42412.png
+favicon: https://github.com/icraftsoftware/biztalk.factory.github.io/raw/master/assets/icons/favicon.png
+icon: fas fa-rocket
+hide_github: true
+show_downloads: false
 plugins:
   - jekyll-seo-tag
-remote_theme: "dracula/gh-pages"
-
-# https://stackoverflow.com/q/42188235/1789441
-# https://stackoverflow.com/a/42762258/1789441
-markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
-  hard_wrap: false
-  parse_block_html: "true"
-  syntax_highlighter: rouge
-  extensions: fenced_code_blocks
+remote_theme: benc-uk/theme-msdark

@@ -1,30 +1,26 @@
 ﻿# BizTalk.Factory Runtime
 
-<div class="badges">
-<div>
-
 [![][github.badge]][github]
 
-[![][release.badge]][release]
-
-</div>
-<div>
-
-[![][pipeline.ci.badge]][pipeline.ci]
+##### Build Pipelines
 
 [![][pipeline.mr.badge]][pipeline.mr]
 
-</div>
-<div>
+[![][pipeline.ci.badge]][pipeline.ci]
+
+##### Latest Release
 
 [![][package.badge]][package]
 
-</div>
-</div>
+[![][release.badge]][release]
+
+##### Release Preview
+
+<!-- TODO preview deployment packages -->
 
 ## Overview
 
-`BizTalk.Factory` Runtime Package is part of the larger [BizTalk.Factory](../../../README.md) SDK. This package is made of the following .NET components:
+Deployment package for `BizTalk.Factory` Runtime, which is part of the larger [BizTalk.Factory](../../../README.md) SDK. This package is made of the following .NET components:
 
 - [Be.Stateless.Extensions](../../../Extensions/README.md), which provides general purpose utility classes and extension methods for various .NET types;
 
@@ -50,7 +46,7 @@
 
 - [Be.Stateless.BizTalk.Stream](../../Stream/README.md), which provides a stream class library for general purpose Microsoft BizTalk Server® development;
 
-- [Be.Stateless.BizTalk.Transform.ExtensionObjects](../../Transform/README.md), which provides a transform class library for general purpose Microsoft BizTalk Server® development.;
+- [Be.Stateless.BizTalk.Transform.ExtensionObjects](../../Transforms/README.md), which provides a transform class library for general purpose Microsoft BizTalk Server® development.;
 
 - [Be.Stateless.BizTalk.XLang](../../XLang/README.md), which provides an orchestration-centric messaging class library for general purpose Microsoft BizTalk Server® development;
 
@@ -70,20 +66,24 @@ See this [alternate component diagram](./ComponentModel.md) for a comprehensive 
 
 ## Installation
 
-<!-- links -->
+<!-- badges -->
 
-[github]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Runtime "Be.Stateless.BizTalk.Factory Runtime GitHub Repository"
-[github.badge]: https://img.shields.io/static/v1?label=Repository&message=Be.Stateless.BizTalk.Factory.Runtime&logo=github
-[package]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Runtime/releases/latest/download/Be.Stateless.BizTalk.Factory.Runtime.Deployment.zip "Be.Stateless.BizTalk.Factory Runtime Deployment Package"
+[doc.main.badge]: https://img.shields.io/static/v1?label=BizTalk.Factory%20SDK&message=User's%20Guide&color=8CA1AF&logo=readthedocs
+[doc.main]: https://www.stateless.be/ "BizTalk.Factory SDK User's Guide"
+[doc.this.badge]: https://img.shields.io/static/v1?label=Be.Stateless.BizTalk.Factory.Runtime&message=User's%20Guide&color=8CA1AF&logo=readthedocs
+[doc.this]: https://www.stateless.be/BizTalk/Factory/Runtime "Be.Stateless.BizTalk.Factory.Runtime User's Guide"
+[github.badge]: https://img.shields.io/static/v1?label=Repository&message=Be.Stateless.BizTalk.Factory.Application&logo=github
+[github]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Runtime "Be.Stateless.BizTalk.Factory.Runtime GitHub Repository"
 [package.badge]: https://img.shields.io/github/v/release/icraftsoftware/Be.Stateless.BizTalk.Factory.Runtime?label=Be.Stateless.BizTalk.Factory.Runtime.Deployment.zip&style=flat&logo=github
-[pipeline.ci]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=88&branchName=master "Azure DevOps Continuous Integration Build Pipeline"
+[package]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Runtime/releases/latest/download/Be.Stateless.BizTalk.Factory.Runtime.Deployment.zip "Be.Stateless.BizTalk.Factory.Runtime Deployment Package"
 [pipeline.ci.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Factory.Runtime%20Continuous%20Integration?branchName=master&label=Continuous%20Integration%20Build
-[pipeline.mr]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=89&branchName=master "Azure DevOps Release Build Pipeline"
+[pipeline.ci]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=88&branchName=master "Be.Stateless.BizTalk.Factory.Runtime Continuous Integration Build Pipeline"
 [pipeline.mr.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Factory.Runtime%20Manual%20Release?branchName=master&label=Manual%20Release%20Build
-[release]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Runtime/releases/latest "Be.Stateless.BizTalk.Factory Runtime GitHub Release"
+[pipeline.mr]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=89&branchName=master "Be.Stateless.BizTalk.Factory.Runtime Manual Release Build Pipeline"
 [release.badge]: https://img.shields.io/github/v/release/icraftsoftware/Be.Stateless.BizTalk.Factory.Runtime?label=Release&logo=github
+[release]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Runtime/releases/latest "Be.Stateless.BizTalk.Factory.Runtime GitHub Release"
 
-<!-- -->
+<!-- links -->
 
 [be.stateless.biztalk.factory.logging]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Runtime/tree/master/src/Be.Stateless.BizTalk.Factory.Logging
 [i-startup-service]: https://github.com/icraftsoftware/Be.Stateless.Runtime/blob/master/src/Be.Stateless.Runtime/Runtime/IStartupService.cs

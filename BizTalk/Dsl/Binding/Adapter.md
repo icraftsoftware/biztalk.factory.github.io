@@ -8,42 +8,42 @@ The namespace `Be.Stateless.BizTalk.Dsl.Binding.Adapter` provides a rich set of 
 
 As detailed in the following table, `BizTalk.Factory`'s `Binding DSL` currently supports most of the built-in Microsoft BizTalk Server® adapters:
 
-| Adapter                            | Inbound | Outbound | [Deprecated][deprecated-adapters] |
-| ---------------------------------- | ------- | -------- | --------------------------------- |
-| `AzureBlobStorageAdapter`          | &cross; | &cross;  |                                   |
-| `EventHubAdapter`                  | &cross; | &cross;  |                                   |
-| `FileAdapter`                      | &check; | &check;  |                                   |
-| `FtpAdapter`                       | &check; | &check;  |                                   |
-| `HttpAdapter`                      | &check; | &check;  |                                   |
-| `LogicAppAdapter`                  | &cross; | &cross;  |                                   |
-| `MQSeriesAdapter`                  | &cross; | &cross;  |                                   |
-| `MsmqAdapter`                      | &cross; | &cross;  |                                   |
-| `Office365CalendarAdapter`         | &cross; | &cross;  |                                   |
-| `Office365ContactAdapter`          | &cross; | &cross;  |                                   |
-| `Office365EmailAdapter`            | &check; | &cross;  |                                   |
-| `Pop3Adapter`                      | &check; | -        | &check;                           |
-| `SBMessagingAdapter`               | &check; | &check;  |                                   |
-| `SharePointOnlineAdapter`          | &cross; | &cross;  |                                   |
-| `SftpAdapter`                      | &check; | &check;  |                                   |
-| `SmtpAdapter`                      | -       | &cross;  | &check;                           |
-| `SoapAdapter`                      | &cross; | &cross;  | &check;                           |
-| `SqlAdapter`                       | &cross; | &cross;  | &check;                           |
-| `WcfBasicHttpAdapter`              | &check; | &check;  |                                   |
-| `WcfBasicHttpRelayAdapter`         | &check; | &check;  |                                   |
-| `WcfCustomAdapter`                 | &check; | &check;  |                                   |
-| `WcfCustomIsolatedAdapter`         | &check; | -        |                                   |
-| `WcfNetMsmqAdapter`                | &check; | &check;  |                                   |
-| `WcfNetNamedPipeAdapter`           | &check; | &check;  |                                   |
-| `WcfNetTcpAdapter`                 | &check; | &check;  |                                   |
-| `WcfNetTcpRelayAdapter`            | &check; | &check;  | &check;                           |
-| `WcfOracleAdapter`                 | &check; | &check;  |                                   |
-| `WcfOracleEBusinessAdapter`        | &cross; | &cross;  |                                   |
-| `WcfSapAdapter`                    | &check; | &check;  |                                   |
-| `WcfSiebelAdapter`                 | &cross; | &cross;  |                                   |
-| `WcfSqlAdapter`                    | &check; | &check;  |                                   |
-| `WcfWebHttpAdapter`                | &check; | &check;  |                                   |
-| `WcfWSHttpAdapter`                 | &check; | &check;  |                                   |
-| `WindowsSharePointServicesAdapter` | &cross; | &cross;  |                                   |
+| Adapter                            | Inbound  | Outbound | [Deprecated][deprecated-adapters] |
+| ---------------------------------- | -------- | -------- | --------------------------------- |
+| `AzureBlobStorageAdapter`          | &#x2717; | &#x2717; |                                   |
+| `EventHubAdapter`                  | &#x2717; | &#x2717; |                                   |
+| `FileAdapter`                      | &#x2713; | &#x2713; |                                   |
+| `FtpAdapter`                       | &#x2713; | &#x2713; |                                   |
+| `HttpAdapter`                      | &#x2713; | &#x2713; |                                   |
+| `LogicAppAdapter`                  | &#x2717; | &#x2717; |                                   |
+| `MQSeriesAdapter`                  | &#x2717; | &#x2717; |                                   |
+| `MsmqAdapter`                      | &#x2717; | &#x2717; |                                   |
+| `Office365CalendarAdapter`         | &#x2717; | &#x2717; |                                   |
+| `Office365ContactAdapter`          | &#x2717; | &#x2717; |                                   |
+| `Office365EmailAdapter`            | &#x2713; | &#x2717; |                                   |
+| `Pop3Adapter`                      | &#x2713; | -        | &#x2713;                          |
+| `SBMessagingAdapter`               | &#x2713; | &#x2713; |                                   |
+| `SharePointOnlineAdapter`          | &#x2717; | &#x2717; |                                   |
+| `SftpAdapter`                      | &#x2713; | &#x2713; |                                   |
+| `SmtpAdapter`                      | -        | &#x2717; | &#x2713;                          |
+| `SoapAdapter`                      | &#x2717; | &#x2717; | &#x2713;                          |
+| `SqlAdapter`                       | &#x2717; | &#x2717; | &#x2713;                          |
+| `WcfBasicHttpAdapter`              | &#x2713; | &#x2713; |                                   |
+| `WcfBasicHttpRelayAdapter`         | &#x2713; | &#x2713; |                                   |
+| `WcfCustomAdapter`                 | &#x2713; | &#x2713; |                                   |
+| `WcfCustomIsolatedAdapter`         | &#x2713; | -        |                                   |
+| `WcfNetMsmqAdapter`                | &#x2713; | &#x2713; |                                   |
+| `WcfNetNamedPipeAdapter`           | &#x2713; | &#x2713; |                                   |
+| `WcfNetTcpAdapter`                 | &#x2713; | &#x2713; |                                   |
+| `WcfNetTcpRelayAdapter`            | &#x2713; | &#x2713; | &#x2713;                          |
+| `WcfOracleAdapter`                 | &#x2713; | &#x2713; |                                   |
+| `WcfOracleEBusinessAdapter`        | &#x2717; | &#x2717; |                                   |
+| `WcfSapAdapter`                    | &#x2713; | &#x2713; |                                   |
+| `WcfSiebelAdapter`                 | &#x2717; | &#x2717; |                                   |
+| `WcfSqlAdapter`                    | &#x2713; | &#x2713; |                                   |
+| `WcfWebHttpAdapter`                | &#x2713; | &#x2713; |                                   |
+| `WcfWSHttpAdapter`                 | &#x2713; | &#x2713; |                                   |
+| `WindowsSharePointServicesAdapter` | &#x2717; | &#x2717; |                                   |
 
 > **Remark** The vast majority of the adapter configuration classes provided by `Be.Stateless.BizTalk.Dsl.Binding` is a delegation `API` that taps right into the [System.ServiceModel.Configuration.StandardBindingElement][standard-binding-element]-derived classes or other Microsoft BizTalk Server® native configuration classes. The developer should therefore feel confident that the configuration bindings produced by `BizTalk.Factory`'s `Binding DSL` are truly accurate and faithful to any actual Microsoft BizTalk Server® application bindings that would be produced otherwise.
 
@@ -255,8 +255,8 @@ class SomePartySendPort : SendPort<NamingConvention>
 
 <!-- links -->
 
-[github.samples]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples
 [deprecated-adapters]: https://docs.microsoft.com/en-us/biztalk/install-and-config-guides/whats-new-in-biztalk-server-2020#deprecated--removed-list
+[github.samples]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples
 [i-adapter-config-binding]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/Adapter/IAdapterConfigBinding.cs
 [i-adapter-config-outbound-action]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/Adapter/IAdapterConfigOutboundAction.cs
 [quich-help-static-action]: ../../../assets/images/QuickHelp.StaticAction.png

@@ -1,32 +1,34 @@
 ﻿# Be.Stateless.BizTalk.Dsl.Binding
 
-<div class="badges">
-<div>
-
 [![][github.badge]][github]
 
-[![][release.badge]][release]
-
-</div>
-<div>
-
-[![][pipeline.ci.badge]][pipeline.ci]
+##### Build Pipelines
 
 [![][pipeline.mr.badge]][pipeline.mr]
 
-</div>
-<div>
+[![][pipeline.ci.badge]][pipeline.ci]
+
+##### Latest Release
 
 [![][nuget.badge]][nuget]
+
+[![][nuget.unit.badge]][nuget.unit]
 
 [![][nuget.conventions.badge]][nuget.conventions]
 
 [![][nuget.environment.settings.badge]][nuget.environment.settings]
 
-[![][nuget.unit.badge]][nuget.unit]
+[![][release.badge]][release]
 
-</div>
-</div>
+##### Release Preview
+
+[![][nuget.preview.badge]][nuget.preview]
+
+[![][nuget.unit.preview.badge]][nuget.unit.preview]
+
+[![][nuget.conventions.preview.badge]][nuget.conventions.preview]
+
+[![][nuget.environment.settings.preview.badge]][nuget.environment.settings.preview]
 
 ## Overview
 
@@ -94,35 +96,65 @@ Notice that though the [EnvironmentOverrideApplicator][environment-override-appl
 
 Finally, even though the [BindingInfoBuilder][binding-info-builder] class is bundled in the [Be.Stateless.BizTalk.Dsl.Binding][nuget] `NuGet` package, one has to install the [`BizTalk.Deployment`](../../../PowerShell/Module/BizTalk/Deployment/README.md) `PowerShell` module to actually be able to generate the `XML` bindings.
 
-<!-- links -->
+## Developer Help
 
-[doc.main]: https://www.stateless.be/ "BizTalk.Factory SDK"
-[doc.this]: https://www.stateless.be/BizTalk/Dsl/Binding "Be.Stateless.BizTalk.Dsl.Binding"
-[github]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding "Be.Stateless.BizTalk.Dsl.Binding GitHub Repository"
+Detailed developer help has been provided as `XML` comments directly embedded in source code. Though developers usually browse through this documentation while developing thanks to, for instance, JetBrains [ReSharper][resharper] quick help &mdash;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>F1</kbd>, an online version of this inlined help has also been provided here for greater reachability:
+
+[![][help.badge]][help]
+
+[![][help.unit.badge]][help.unit]
+
+[![][help.conventions.badge]][help.conventions]
+
+[![][help.environment.settings.badge]][help.environment.settings]
+
+<!-- badges -->
+
+[doc.main.badge]: https://img.shields.io/static/v1?label=BizTalk.Factory%20SDK&message=User's%20Guide&color=8CA1AF&logo=readthedocs
+[doc.main]: https://www.stateless.be/ "BizTalk.Factory SDK User's Guide"
+[doc.this.badge]: https://img.shields.io/static/v1?label=Be.Stateless.BizTalk.Dsl.Binding&message=User's%20Guide&color=8CA1AF&logo=readthedocs
+[doc.this]: https://www.stateless.be/BizTalk/Dsl/Binding "Be.Stateless.BizTalk.Dsl.Binding User's Guide"
 [github.badge]: https://img.shields.io/static/v1?label=Repository&message=Be.Stateless.BizTalk.Dsl.Binding&logo=github
-[github.samples]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples
-[nuget]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Dsl.Binding "Be.Stateless.BizTalk.Dsl.Binding NuGet Package"
+[github]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding "Be.Stateless.BizTalk.Dsl.Binding GitHub Repository"
+[help.badge]: https://img.shields.io/static/v1?label=Be.Stateless.BizTalk.Dsl.Binding&message=Developer%20Help&color=8CA1AF&logo=microsoftacademic
+[help]: https://github.com/icraftsoftware/biztalk.factory.github.io/blob/master/Help/BizTalk/Dsl/Binding/README.md "Be.Stateless.BizTalk.Dsl.Binding Developer Help"
+[help.conventions.badge]: https://img.shields.io/static/v1?label=Be.Stateless.BizTalk.Dsl.Binding.Conventions&message=Developer%20Help&color=8CA1AF&logo=microsoftacademic
+[help.conventions]: https://github.com/icraftsoftware/biztalk.factory.github.io/blob/master/Help/BizTalk/Dsl/Binding/Conventions/README.md "Be.Stateless.BizTalk.Dsl.Binding.Conventions Developer Help"
+[help.environment.settings.badge]: https://img.shields.io/static/v1?label=Be.Stateless.BizTalk.Dsl.Environment.Settings&message=Developer%20Help&color=8CA1AF&logo=microsoftacademic
+[help.environment.settings]: https://github.com/icraftsoftware/biztalk.factory.github.io/blob/master/Help/BizTalk/Dsl/Environment/Settings/README.md "Be.Stateless.BizTalk.Dsl.Environment.Settings Developer Help"
+[help.unit.badge]: https://img.shields.io/static/v1?label=Be.Stateless.BizTalk.Dsl.Binding.Unit&message=Developer%20Help&color=8CA1AF&logo=microsoftacademic
+[help.unit]: https://github.com/icraftsoftware/biztalk.factory.github.io/blob/master/Help/BizTalk/Dsl/Binding/Unit/README.md "Be.Stateless.BizTalk.Dsl.Binding.Unit Developer Help"
 [nuget.badge]: https://img.shields.io/nuget/v/Be.Stateless.BizTalk.Dsl.Binding.svg?label=Be.Stateless.BizTalk.Dsl.Binding&style=flat&logo=nuget
-[nuget.conventions]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Dsl.Binding.Conventions
+[nuget]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Dsl.Binding "Be.Stateless.BizTalk.Dsl.Binding NuGet Package"
+[nuget.preview.badge]: https://badge-factory.azurewebsites.net/package/icraftsoftware/be.stateless/BizTalk.Factory.Preview/Be.Stateless.BizTalk.Dsl.Binding?logo=nuget
+[nuget.preview]: https://dev.azure.com/icraftsoftware/be.stateless/_packaging?_a=package&feed=BizTalk.Factory.Preview&package=Be.Stateless.BizTalk.Dsl.Binding&protocolType=NuGet "Be.Stateless.BizTalk.Dsl.Binding Preview NuGet Package"
 [nuget.conventions.badge]: https://img.shields.io/nuget/v/Be.Stateless.BizTalk.Dsl.Binding.Conventions.svg?label=Be.Stateless.BizTalk.Dsl.Binding.Conventions&style=flat&logo=nuget
-[nuget.environment.settings]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Dsl.Environment.Settings
+[nuget.conventions]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Dsl.Binding.Conventions
+[nuget.conventions.preview.badge]: https://badge-factory.azurewebsites.net/package/icraftsoftware/be.stateless/BizTalk.Factory.Preview/Be.Stateless.BizTalk.Dsl.Binding.Conventions?logo=nuget
+[nuget.conventions.preview]: https://dev.azure.com/icraftsoftware/be.stateless/_packaging?_a=package&feed=BizTalk.Factory.Preview&package=Be.Stateless.BizTalk.Dsl.Binding.Conventions&protocolType=NuGet "Be.Stateless.BizTalk.Dsl.Binding.Conventions Preview NuGet Package"
 [nuget.environment.settings.badge]: https://img.shields.io/nuget/v/Be.Stateless.BizTalk.Dsl.Environment.Settings.svg?label=Be.Stateless.BizTalk.Dsl.Environment.Settings&style=flat&logo=nuget
-[nuget.unit]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Dsl.Binding.Unit "Be.Stateless.BizTalk.Dsl.Binding.Unit NuGet Package"
+[nuget.environment.settings]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Dsl.Environment.Settings
+[nuget.environment.settings.preview.badge]: https://badge-factory.azurewebsites.net/package/icraftsoftware/be.stateless/BizTalk.Factory.Preview/Be.Stateless.BizTalk.Dsl.Environment.Settings?logo=nuget
+[nuget.environment.settings.preview]: https://dev.azure.com/icraftsoftware/be.stateless/_packaging?_a=package&feed=BizTalk.Factory.Preview&package=Be.Stateless.BizTalk.Dsl.Environment.Settings&protocolType=NuGet "Be.Stateless.BizTalk.Dsl.Environment.Settings Preview NuGet Package"
 [nuget.unit.badge]: https://img.shields.io/nuget/v/Be.Stateless.BizTalk.Dsl.Binding.Unit.svg?label=Be.Stateless.BizTalk.Dsl.Binding.Unit&style=flat&logo=nuget
-[pipeline.ci]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=61&branchName=master "Azure DevOps Continuous Integration Build Pipeline"
+[nuget.unit]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Dsl.Binding.Unit "Be.Stateless.BizTalk.Dsl.Binding.Unit NuGet Package"
+[nuget.unit.preview.badge]: https://badge-factory.azurewebsites.net/package/icraftsoftware/be.stateless/BizTalk.Factory.Preview/Be.Stateless.BizTalk.Dsl.Binding.Unit?logo=nuget
+[nuget.unit.preview]: https://dev.azure.com/icraftsoftware/be.stateless/_packaging?_a=package&feed=BizTalk.Factory.Preview&package=Be.Stateless.BizTalk.Dsl.Binding.Unit&protocolType=NuGet "Be.Stateless.BizTalk.Dsl.Binding.Unit Preview NuGet Package"
 [pipeline.ci.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Dsl.Binding%20Continuous%20Integration?branchName=master&label=Continuous%20Integration%20Build
-[pipeline.mr]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=62&branchName=master "Azure DevOps Release Build Pipeline"
+[pipeline.ci]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=61&branchName=master "Be.Stateless.BizTalk.Dsl.Binding Continuous Integration Build Pipeline"
 [pipeline.mr.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Dsl.Binding%20Manual%20Release?branchName=master&label=Manual%20Release%20Build
-[release]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/releases/latest "Be.Stateless.BizTalk.Dsl.Binding Release"
+[pipeline.mr]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=62&branchName=master "Be.Stateless.BizTalk.Dsl.Binding Manual Release Build Pipeline"
 [release.badge]: https://img.shields.io/github/v/release/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding?label=Release&logo=github
+[release]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/releases/latest "Be.Stateless.BizTalk.Dsl.Binding Release"
 
-<!--  -->
+<!-- links -->
 
 [application-binding-validator]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/Visitor/ApplicationBindingValidator.cs
 [binding-info-builder]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/Visitor/BindingInfoBuilder.cs
 [environment-override-applicator]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/Visitor/EnvironmentOverrideApplicator.cs
 [i-application-binding-visitor]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/IApplicationBindingVisitor.cs
 [i-visitable]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Abstractions/blob/master/src/Be.Stateless.BizTalk.Dsl.Abstractions/Dsl/IVisitable.cs
+[resharper]: https://www.jetbrains.com/resharper/
 [visitor-pattern]: https://en.wikipedia.org/wiki/Visitor_pattern
 [visitor-pipeline]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/Visitor/Pipeline/VisitorPipeline.cs
 

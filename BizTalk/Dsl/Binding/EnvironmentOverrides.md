@@ -53,7 +53,7 @@ While, as we have seen, the endpoints to which to connect could vary with the ta
 - [SendPipeline][send-pipeline],
 - [AdapterBase][adapter-base].
 
-<!-- links  -->
+<!-- links -->
 
 [github.samples]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples
 

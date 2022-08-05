@@ -1,30 +1,30 @@
 ﻿@startuml
 !theme metal
-skinparam BackgroundColor #282a36
+'skinparam BackgroundColor #333333
 'skinparam LineType ortho
 skinparam Arrow {
-  Color #f8f8f2
-  FontColor #f8f8f2
+  Color #F0FFFF
+  FontColor #F0FFFF
 }
 skinparam Boundary {
-  BackgroundColor #44475a
-  BorderColor #f8f8f2
-  FontColor #f8f8f2
+  BackgroundColor #444444
+  BorderColor #F0FFFF
+  FontColor #F0FFFF
 }
 skinparam Component {
-  BackgroundColor #44475a
-  BorderColor #f8f8f2
-  FontColor #f8f8f2
+  BackgroundColor #444444
+  BorderColor #F0FFFF
+  FontColor #F0FFFF
 }
 skinparam Database {
-  BackgroundColor #44475a
-  BorderColor #f8f8f2
-  FontColor #f8f8f2
+  BackgroundColor #444444
+  BorderColor #F0FFFF
+  FontColor #F0FFFF
 }
 skinparam Note {
-  BackgroundColor #44475a
-  BorderColor #f8f8f2
-  FontColor #f8f8f2
+  BackgroundColor #444444
+  BorderColor #F0FFFF
+  FontColor #F0FFFF
 }
 
 boundary rl1 as "BizTalk.Factory.Batching.\rRL1.Batch.Content.WCF-SQL.XML"

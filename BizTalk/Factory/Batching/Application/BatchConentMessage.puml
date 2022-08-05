@@ -1,15 +1,15 @@
 ﻿@startuml
 !theme metal
-skinparam BackgroundColor #282a36
+'skinparam BackgroundColor #333333
 'skinparam LineType ortho
 skinparam Arrow {
-  Color #f8f8f2
-  FontColor #f8f8f2
+  Color #F0FFFF
+  FontColor #F0FFFF
 }
 skinparam Class {
-  BackgroundColor #44475a
-  BorderColor #f8f8f2
-  FontColor #f8f8f2
+  BackgroundColor #444444
+  BorderColor #F0FFFF
+  FontColor #F0FFFF
 }
 hide circle
 hide members

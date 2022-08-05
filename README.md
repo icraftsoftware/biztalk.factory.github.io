@@ -36,21 +36,17 @@ They are many other available Microsoft BizTalk Server® extensions that try to 
 
 `BizTalk.Factory` deployment packages consist of the following Microsoft PowerShell® modules, which have been made publicly available on [PowerShell Gallery][powershell.gallery.icraftsoftware] &mdash;altogether they provide a declarative deployment framework suited for Microsoft BizTalk Server® 2020:
 
-- [BizTalk.Administration](./PowerShell/Module/BizTalk/Administration/README.md) is a PowerShell utility module providing commands to administrate, configure, and explore Microsoft BizTalk Server® and its artifacts;
+- [BizTalk.Administration](./PowerShell/Module/BizTalk/Administration/README.md), which is a `PowerShell` utility module providing commands to administrate, configure, and explore Microsoft BizTalk Server® and its artifacts;
 
-- [BizTalk.Deployment](./PowerShell/Module/BizTalk/Deployment/README.md) is an extensible PowerShell utility module based on a deployment framework featuring a declarative resource-driven task model and providing commands to deploy full-fledged Microsoft BizTalk Server® applications. This module furthermore depends on the following third-party PowerShell Modules:
+- [BizTalk.Deployment](./PowerShell/Module/BizTalk/Deployment/README.md), which is an extensible `PowerShell` utility module based on a deployment framework featuring a declarative resource-driven task model and providing commands to deploy full-fledged Microsoft BizTalk Server® applications;
 
-  - [Gac](https://www.powershellgallery.com/packages/Gac);
-  - [InvokeBuild](https://www.powershellgallery.com/packages/InvokeBuild);
-  - [SqlServer](https://www.powershellgallery.com/packages/SqlServer).
+- [Dsl.Configuration](./PowerShell/Module/Dsl/Configuration/README.md), which is a `PowerShell` utility module providing an embedded `XML` `DSL` to create configuration file specifications and commands to edit `XML` configuration files;
 
-- [Dsl.Configuration](./PowerShell/Module/Dsl/Configuration/README.md) is a PowerShell utility module providing commands for general purpose XML configuration file edition;
+- [Exec](./PowerShell/Module/Exec/README.md), which is a `PowerShell` utility module providing commands to work with external executables;
 
-- [Exec](./PowerShell/Module/Exec/README.md) is a PowerShell utility module providing commands to work with external executables;
+- [Resource.Manifest](./PowerShell/Module/Resource/Manifest/README.md), which is a `PowerShell` module providing commands to define resource manifests made of resource groups &mdash;i.e. resources grouped by kind. Resource manifests are declarative Microsoft BizTalk Server® deployment recipes that can be entrusted to the [BizTalk.Deployment](./PowerShell/Module/BizTalk/Deployment/README.md) `PowerShell` module, which will take care of the actual deployment;
 
-- [Resource.Manifest](./PowerShell/Module/Resource/Manifest/README.md) is an extensible PowerShell utility module providing commands to define and process resource manifests that can later on be used to declaratively &mdash;i.e. according to the nature of the resource operated upon&mdash; drive deployment operations;
-
-- [Psx](./PowerShell/Module/Psx/README.md) is a general scaffolding PowerShell utility module.
+- [Psx](./PowerShell/Module/Psx/README.md), which is a general scaffolding `PowerShell` utility module.
 
 ## Development Packages
 
@@ -76,10 +72,10 @@ The development packages consist of plain `.NET` assemblies that have been made 
 
 <!-- links -->
 
+[biztalk.server.2020.build]: https://www.nuget.org/packages/BizTalk.Server.2020.Build
 [dsl]: https://en.wikipedia.org/wiki/Domain-specific_language "Domain-Specific Language"
 [nuget.icraftsoftware]: https://www.nuget.org/profiles/icraftsoftware
 [powershell.gallery.icraftsoftware]: https://www.powershellgallery.com/profiles/icraftsoftware
-[biztalk.server.2020.build]: https://www.nuget.org/packages/BizTalk.Server.2020.Build
 
 <!--
 cSpell:ignore Eliasen priorly

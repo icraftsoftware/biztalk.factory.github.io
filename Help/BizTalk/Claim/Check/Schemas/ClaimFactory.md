@@ -1,0 +1,18 @@
+#### [Be.Stateless.BizTalk.Claim.Check.Schemas](README.md 'README')
+### [Be.Stateless.BizTalk.Message](Be.Stateless.BizTalk.Message.md 'Be.Stateless.BizTalk.Message')
+
+## ClaimFactory Class
+
+```csharp
+public static class ClaimFactory
+```
+
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; ClaimFactory
+
+| Methods | |
+| :--- | :--- |
+| [CreateCheck(string, string)](ClaimFactory.CreateCheck(string,string).md 'Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheck(string, string)') | Creates a [Be.Stateless.BizTalk.Schemas.Xml.Claim.Check](https://docs.microsoft.com/en-us/dotnet/api/Be.Stateless.BizTalk.Schemas.Xml.Claim.Check 'Be.Stateless.BizTalk.Schemas.Xml.Claim.Check') message with a given [messageType](ClaimFactory.CreateCheck(string,string).md#Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheck(string,string).messageType 'Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheck(string, string).messageType') and [url](ClaimFactory.CreateCheck(string,string).md#Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheck(string,string).url 'Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheck(string, string).url') claim. |
+| [CreateCheck(string)](ClaimFactory.CreateCheck(string).md 'Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheck(string)') | Creates a [Be.Stateless.BizTalk.Schemas.Xml.Claim.Check](https://docs.microsoft.com/en-us/dotnet/api/Be.Stateless.BizTalk.Schemas.Xml.Claim.Check 'Be.Stateless.BizTalk.Schemas.Xml.Claim.Check') message with a given [url](ClaimFactory.CreateCheck(string).md#Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheck(string).url 'Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheck(string).url') claim. |
+| [CreateCheckIn(string, string)](ClaimFactory.CreateCheckIn(string,string).md 'Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheckIn(string, string)') | Creates a [Be.Stateless.BizTalk.Schemas.Xml.Claim.CheckIn](https://docs.microsoft.com/en-us/dotnet/api/Be.Stateless.BizTalk.Schemas.Xml.Claim.CheckIn 'Be.Stateless.BizTalk.Schemas.Xml.Claim.CheckIn') message with a given [messageType](ClaimFactory.CreateCheckIn(string,string).md#Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheckIn(string,string).messageType 'Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheckIn(string, string).messageType') and [url](ClaimFactory.CreateCheckIn(string,string).md#Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheckIn(string,string).url 'Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheckIn(string, string).url') claim. |
+| [CreateCheckIn(string)](ClaimFactory.CreateCheckIn(string).md 'Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheckIn(string)') | Creates a [Be.Stateless.BizTalk.Schemas.Xml.Claim.CheckIn](https://docs.microsoft.com/en-us/dotnet/api/Be.Stateless.BizTalk.Schemas.Xml.Claim.CheckIn 'Be.Stateless.BizTalk.Schemas.Xml.Claim.CheckIn') message with a given [url](ClaimFactory.CreateCheckIn(string).md#Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheckIn(string).url 'Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheckIn(string).url') claim. |
+| [CreateCheckOut(string)](ClaimFactory.CreateCheckOut(string).md 'Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheckOut(string)') | Creates a [Be.Stateless.BizTalk.Schemas.Xml.Claim.CheckOut](https://docs.microsoft.com/en-us/dotnet/api/Be.Stateless.BizTalk.Schemas.Xml.Claim.CheckOut 'Be.Stateless.BizTalk.Schemas.Xml.Claim.CheckOut') message with a given [url](ClaimFactory.CreateCheckOut(string).md#Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheckOut(string).url 'Be.Stateless.BizTalk.Message.ClaimFactory.CreateCheckOut(string).url') claim. |

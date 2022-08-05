@@ -1,26 +1,22 @@
 ﻿# Be.Stateless.BizTalk.Pipelines
 
-<div class="badges">
-<div>
-
 [![][github.badge]][github]
 
-[![][release.badge]][release]
-
-</div>
-<div>
-
-[![][pipeline.ci.badge]][pipeline.ci]
+##### Build Pipelines
 
 [![][pipeline.mr.badge]][pipeline.mr]
 
-</div>
-<div>
+[![][pipeline.ci.badge]][pipeline.ci]
+
+##### Latest Release
 
 [![][nuget.badge]][nuget]
 
-</div>
-</div>
+[![][release.badge]][release]
+
+##### Release Preview
+
+[![][nuget.preview.badge]][nuget.preview]
 
 ## Overview
 
@@ -50,7 +46,7 @@ It is worth noticing that these pipelines have not been defined via the Microsof
 
 ## Pipeline Build
 
-Just because it references the `Be.Stateless.BizTalk.Pipeline.Definitions` project, the `Be.Stateless.BizTalk.Pipelines` project will produce pipeline designer surface equivalent outputs when being built. This is made possible thanks to the conjunctive work of both the [BizTalk.Server.2020.Build](./../Server/2020/Build/README.md) and [Be.Stateless.BizTalk.Build.Tasks](./../Build/Tasks/README.md) components to process the pipeline definitions found in the referenced `Be.Stateless.BizTalk.Pipeline.Definitions` project.
+Just because it references the `Be.Stateless.BizTalk.Pipeline.Definitions` project, the `Be.Stateless.BizTalk.Pipelines` project will produce pipeline designer surface equivalent outputs when being built. This is made possible thanks to the conjunctive work of both the [BizTalk.Server.2020.Build](./../Build/Tasks/README.md) and [Be.Stateless.BizTalk.Build.Tasks](./../Build/Tasks/README.md) components to process the pipeline definitions found in the referenced `Be.Stateless.BizTalk.Pipeline.Definitions` project.
 
 All the pipeline designer surface equivalent outputs, i.e. the `*.btp` files, can be found in the `Be.Stateless.BizTalk.Pipelines` project in the same [GitHub][github] repository. Notice that these files are being generated anew at each build; they have been committed into the source code for simplicity's sake.
 
@@ -191,7 +187,7 @@ Which displays as follows when opened in the designer surface:
 
 ![XmlReceive][xml-receive.btp]
 
-For the sake of completeness, [Be.Stateless.BizTalk.Build.Tasks](./../Build/Tasks/README.md), with the help of [BizTalk.Server.2020.Build](./../Server/2020/Build/README.md), substitutes itself to the default Microsoft BizTalk Server® pipeline compiler and produces the following `.btp.cs` output file &mdash;the astute reader will immediately notice how much more readable, explicit and better formatted this code is in comparison with the one produced by the default compiler:
+For the sake of completeness, [Be.Stateless.BizTalk.Build.Tasks](./../Build/Tasks/README.md), with the help of [BizTalk.Server.2020.Build](./../Build/Tasks/README.md), substitutes itself to the default Microsoft BizTalk Server® pipeline compiler and produces the following `.btp.cs` output file &mdash;the astute reader will immediately notice how much more readable, explicit and better formatted this code is in comparison with the one produced by the default compiler:
 
 ```csharp
 namespace Be.Stateless.BizTalk.MicroPipelines
@@ -382,18 +378,27 @@ namespace Be.Stateless.BizTalk.MicroPipelines
 }
 ```
 
+<!-- badges -->
+
+[doc.main.badge]: https://img.shields.io/static/v1?label=BizTalk.Factory%20SDK&message=User's%20Guide&color=8CA1AF&logo=readthedocs
+[doc.main]: https://www.stateless.be/ "BizTalk.Factory SDK User's Guide"
+[doc.this.badge]: https://img.shields.io/static/v1?label=Be.Stateless.BizTalk.Pipelines&message=User's%20Guide&color=8CA1AF&logo=readthedocs
+[doc.this]: https://www.stateless.be/BizTalk/Pipelines "Be.Stateless.BizTalk.Pipelines User's Guide"
+[github.badge]: https://img.shields.io/static/v1?label=Repository&message=Be.Stateless.BizTalk.Pipelines&logo=github
+[github]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Pipelines "Be.Stateless.BizTalk.Pipelines GitHub Repository"
+[nuget.badge]: https://img.shields.io/nuget/v/Be.Stateless.BizTalk.Pipelines.svg?label=Be.Stateless.BizTalk.Pipelines&style=flat&logo=nuget
+[nuget]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Pipelines "Be.Stateless.BizTalk.Pipelines NuGet Package"
+[nuget.preview.badge]: https://badge-factory.azurewebsites.net/package/icraftsoftware/be.stateless/BizTalk.Factory.Preview/Be.Stateless.BizTalk.Pipelines?logo=nuget
+[nuget.preview]: https://dev.azure.com/icraftsoftware/be.stateless/_packaging?_a=package&feed=BizTalk.Factory.Preview&package=Be.Stateless.BizTalk.Pipelines&protocolType=NuGet "Be.Stateless.BizTalk.Pipelines Preview NuGet Package"
+[pipeline.ci.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Pipelines%20Continuous%20Integration?branchName=master&label=Continuous%20Integration%20Build
+[pipeline.ci]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=57&branchName=master "Be.Stateless.BizTalk.Pipelines Continuous Integration Build Pipeline"
+[pipeline.mr.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Pipelines%20Manual%20Release?branchName=master&label=Manual%20Release%20Build
+[pipeline.mr]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=58&branchName=master "Be.Stateless.BizTalk.Pipelines Manual Release Build Pipeline"
+[release.badge]: https://img.shields.io/github/v/release/icraftsoftware/Be.Stateless.BizTalk.Pipelines?label=Release&logo=github
+[release]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Pipelines/releases/latest "Be.Stateless.BizTalk.Pipelines Release"
+
 <!-- links -->
 
-[github]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Pipelines "Be.Stateless.BizTalk.Pipelines GitHub Repository"
-[github.badge]: https://img.shields.io/static/v1?label=Repository&message=Be.Stateless.BizTalk.Pipelines&logo=github
-[nuget]: https://www.nuget.org/packages/Be.Stateless.BizTalk.Pipelines "Be.Stateless.BizTalk.Pipelines NuGet Package"
-[nuget.badge]: https://img.shields.io/nuget/v/Be.Stateless.BizTalk.Pipelines.svg?label=Be.Stateless.BizTalk.Pipelines&style=flat&logo=nuget
-[pipeline.ci]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=57&branchName=master "Azure DevOps Continuous Integration Build Pipeline"
-[pipeline.ci.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Pipelines%20Continuous%20Integration?branchName=master&label=Continuous%20Integration%20Build
-[pipeline.mr]: https://dev.azure.com/icraftsoftware/be.stateless/_build/latest?definitionId=58&branchName=master "Azure DevOps Release Build Pipeline"
-[pipeline.mr.badge]: https://dev.azure.com/icraftsoftware/be.stateless/_apis/build/status/Be.Stateless.BizTalk.Pipelines%20Manual%20Release?branchName=master&label=Manual%20Release%20Build
-[release]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Pipelines/releases/latest "Be.Stateless.BizTalk.Pipelines Release"
-[release.badge]: https://img.shields.io/github/v/release/icraftsoftware/Be.Stateless.BizTalk.Pipelines?label=Release&logo=github
 [ff-receive]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Pipelines/blob/master/src/Be.Stateless.BizTalk.Pipeline.Definitions/MicroPipelines/FFReceive.cs
 [ff-transmit]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Pipelines/blob/master/src/Be.Stateless.BizTalk.Pipeline.Definitions/MicroPipelines/FFTransmit.cs
 [pass-thru-receive]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Pipelines/blob/master/src/Be.Stateless.BizTalk.Pipeline.Definitions/MicroPipelines/PassThruReceive.cs
@@ -401,7 +406,7 @@ namespace Be.Stateless.BizTalk.MicroPipelines
 [xml-receive]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Pipelines/blob/master/src/Be.Stateless.BizTalk.Pipeline.Definitions/MicroPipelines/XmlReceive.cs
 [xml-transmit]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Pipelines/blob/master/src/Be.Stateless.BizTalk.Pipeline.Definitions/MicroPipelines/XmlTransmit.cs
 
-<!-- image links -->
+<!-- images -->
 
 [xml-receive.btp]: ./../../assets/images/XmlReceive.btp.png "XmlReceive Micro Pipeline"
 
