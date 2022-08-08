@@ -1,6 +1,6 @@
 ﻿# Configuration Element Commands
 
-> **Tip** For the `PowerShell` newbies, you can then get the signature of all the configuration element commands via the following `PowerShell` command:
+> **Tips** For the `PowerShell` newbies, you can then get the signature of all the configuration element commands via the following `PowerShell` command:
 >
 > ```PowerShell
 > Get-Command -Noun ConfigurationElement | Get-Help
@@ -44,7 +44,7 @@ Set-ConfigurationElement -TargetConfigurationFile global:clr4:32bits:machine.con
    -Attribute @{ '{urn:custom:namespace}attribute' = 'value' }
 ```
 
-> **Caution** These commands are not idempotent as are [Configuration Specification](./ConfigurationSpecification.md#configuration-specification-idempotence), that is to say that a command that completed successfully would fail if being executed again.
+> **Caution!** These commands are not idempotent as are [Configuration Specification](./ConfigurationSpecification.md#configuration-specification-idempotence), that is to say that a command that completed successfully would fail if being executed again.
 
 > **Remark** Contrary to the [Configuration Specification](ConfigurationSpecification.md) command, these commands will not perform any backup of the edited `XML` configuration files or create any inverse scripts capable of undoing all the changes that have actually been made.
 

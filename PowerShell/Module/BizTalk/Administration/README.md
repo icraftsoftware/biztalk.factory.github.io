@@ -24,7 +24,7 @@
 
 For a detailed understanding of the commands, you are redirected to the `PowerShell` inline help that provides a comprehensive documentation.
 
-> **Tip** For the `PowerShell` newbies, you can get a list of the commands made available by this module by issuing the following `PowerShell` command:
+> **Tips** For the `PowerShell` newbies, you can get a list of the commands made available by this module by issuing the following `PowerShell` command:
 >
 > ```PowerShell
 > Get-Command -Module BizTalk.Administration

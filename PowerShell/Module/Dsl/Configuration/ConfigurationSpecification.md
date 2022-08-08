@@ -1,6 +1,6 @@
 ﻿# Configuration Specification Command
 
-> **Tip** For the `PowerShell` newbies, you can then get detailed help on an individual command via a `PowerShell` command similar to:
+> **Tips** For the `PowerShell` newbies, you can then get detailed help on an individual command via a `PowerShell` command similar to:
 >
 > ```PowerShell
 > Get-Help -Name Merge-ConfigurationSpecification -Detailed

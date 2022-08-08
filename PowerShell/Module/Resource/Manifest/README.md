@@ -22,7 +22,7 @@
 
 `Resource.Manifest` is a `PowerShell` module providing commands to define resource manifests made of resource groups &mdash;i.e. resources grouped by kind. Resource manifests are declarative Microsoft BizTalk Server® deployment recipes that can be entrusted to the [`BizTalk.Deployment`][biztalk.deployment] `PowerShell` module, which will take care of the actual deployment.
 
-> **Caution** Commands provided by the `Resource.Manifest` `PowerShell` module beginning with the `New` verb have been provided with an alias that is equivalent to the noun part of the command name without the verb; e.g. `Assembly` is the alias for the `New-Assembly` command. For the `PowerShell` newbies, you can retrieve all the commands and aliases defined by the `Resource.Manifest` module via the following `PowerShell` commands:
+> **Tips** Commands provided by the `Resource.Manifest` `PowerShell` module beginning with the `New` verb have been provided with an alias that is equivalent to the noun part of the command name without the verb; e.g. `Assembly` is the alias for the `New-Assembly` command. For the `PowerShell` newbies, you can retrieve all the commands and aliases defined by the `Resource.Manifest` module via the following `PowerShell` commands:
 >
 > ```PowerShell
 > Get-Command -Module Resource.Manifest

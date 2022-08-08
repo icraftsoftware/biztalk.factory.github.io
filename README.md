@@ -50,6 +50,8 @@ They are many other available Microsoft BizTalk Server® extensions that try to 
 
 ## Development Packages
 
+> **Tips** All the `BizTalk.Factory` `NuGet` packages are [Source Link][source-link]-enabled for an immersive debugging experience.
+
 The development packages consist of plain `.NET` assemblies that have been made available on [NuGet][nuget.icraftsoftware]. According to their purpose, these assemblies, which naturally have to be referenced at development time, fall into several categories:
 
 - The ones that provide core runtime functionalities. These assemblies usually do not require to be installed on a development box unless the developer needs to run Microsoft BizTalk Server® applications relying on them (e.g. to execute the automated tests of messaging-only or orchestration-based flows). If necessary, they should be deployed along with the [Runtime Packages](./README.md#runtime-packages);
@@ -60,7 +62,7 @@ The development packages consist of plain `.NET` assemblies that have been made 
 
 - The ones to be used as complementary unit test libraries helping the developers to unit test code written on top of `BizTalk.Factory` SDK. Some of these unit testing library assemblies even come in separate flavors, leveraging either or both [NUnit](https://nunit.org/) and [xUnit](https://xunit.net/) testing frameworks. These assemblies are obviously only required at development time and are made available as `NuGet` packages only &mdash;look for [Be.Stateless.\*.Unit](https://www.nuget.org/packages?q=be.stateless.*.unit), [Be.Stateless.\*.NUnit](https://www.nuget.org/packages?q=be.stateless.*.nunit), and [Be.Stateless.\*.XUnit](https://www.nuget.org/packages?q=be.stateless.*.xunit) `NuGet` packages. These assemblies must never be deployed.
 
-> **Caution!** Both [BizTalk.Server.2020.Build][biztalk.server.2020.build] `NuGet` package and [BizTalk.Deployment](./PowerShell/Module/BizTalk/Deployment/README.md) `PowerShell` module embed runtime and `DSL` assemblies. The developer should therefore take care that the versions of the assemblies referenced in his projects are compatible with the one coming with either [BizTalk.Server.2020.Build][biztalk.server.2020.build] or [BizTalk.Deployment](./PowerShell/Module/BizTalk/Deployment/README.md).
+> **Caution!** Both [BizTalk.Server.2020.Build][biztalk.server.2020.build] `NuGet` package and [BizTalk.Deployment](./PowerShell/Module/BizTalk/Deployment/README.md) `PowerShell` module's accompanying runtime and `DSL` assemblies must be version aligned. The developer should therefore take care that the versions of the assemblies referenced in his projects are compatible with the one coming with either [BizTalk.Server.2020.Build][biztalk.server.2020.build] or [BizTalk.Deployment](./PowerShell/Module/BizTalk/Deployment/README.md).
 
 ## Installing BizTalk.Factory
 
@@ -76,6 +78,7 @@ The development packages consist of plain `.NET` assemblies that have been made 
 [dsl]: https://en.wikipedia.org/wiki/Domain-specific_language "Domain-Specific Language"
 [nuget.icraftsoftware]: https://www.nuget.org/profiles/icraftsoftware
 [powershell.gallery.icraftsoftware]: https://www.powershellgallery.com/profiles/icraftsoftware
+[source-link]: https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink
 
 <!--
 cSpell:ignore Eliasen priorly

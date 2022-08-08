@@ -32,7 +32,7 @@
 
 > **Remark** The `Dsl.Configuration` `PowerShell` module is just a façade in front of a `DSL` processing engine that is also made available as a separate `NuGet` package, see [Be.Stateless.Dsl.Configuration][nuget].
 
-> **Tip** For the `PowerShell` newbies, you can get a list of the commands made available by this module by issuing the following `PowerShell` command:
+> **Tips** For the `PowerShell` newbies, you can get a list of the commands made available by this module by issuing the following `PowerShell` command:
 >
 > ```PowerShell
 > Get-Command -Module Dsl.Configuration

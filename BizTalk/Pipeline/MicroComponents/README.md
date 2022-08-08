@@ -72,7 +72,7 @@
 
 - [Be.Stateless.BizTalk.MicroComponent.XmlTranslator][xml-translator] which, on the fly, moves elements, and optionally attributes, from one `XML` namespace to another in the `XML` stream constituting the body of the message. The namespace translation to be made can either be statically configured or be discovered at runtime thanks to the [BizTalkFactoryProperties.XmlTranslations][biztalk-factory-properties.xml-translations] context property;
 
-- [Be.Stateless.BizTalk.MicroComponent.XsltRunner][xslt-runner] which applies an `XSL` Transformation on `XML` messages along their way in the pipeline. The map can either be statically configured or discovered at runtime thanks to the [BizTalkFactoryProperties.MapTypeName][biztalk-factory-properties.map-type-name] context property;
+- [Be.Stateless.BizTalk.MicroComponent.XsltRunner][xslt-runner] which applies an `XSLT` Transformation on `XML` messages along their way in the pipeline; don't forget to check the section [Compiled `XSLT` Transforms on Steroids](../../Xml/README.md#compiled-xslt-transforms-on-steroids) for an overview of the distinctive features of `BizTalk.Factory`. The map can either be statically configured or discovered at runtime thanks to the [BizTalkFactoryProperties.MapTypeName][biztalk-factory-properties.map-type-name] context property;
 
 - [Be.Stateless.BizTalk.MicroComponent.ZipDecoder][zip-decoder] which wraps the message's original stream in a [ZipInputStream][zip-input-stream] that decompresses the first entry of a Zip Archive;
 

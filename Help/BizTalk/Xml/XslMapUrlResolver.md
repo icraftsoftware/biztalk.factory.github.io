@@ -15,7 +15,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 ### Remarks
 The set of Uniform Resource Identifier (URI) that is supported is as follows:
 - `map://type/<BizTalk Map's strong type name>`, for instance
-              `map://type/Be.Stateless.BizTalk.Xml.Xsl.IdentityTransform, Be.Stateless.BizTalk.Xml.Tests, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3707daa0b119fc14`
+              `map://type/Be.Stateless.BizTalk.Xml.Xsl.IdentityTransform, Be.Stateless.BizTalk.Xml.Tests, Version=2.1.0.0, Culture=neutral, PublicKeyToken=3707daa0b119fc14`
 - `map://resource/<embedded resource's full name>`, for instance
               `map://resource/Be.Stateless.BizTalk.Xml.Data.Included.xsl`
 - `map://resource/<embedded resource's name>`, for instance

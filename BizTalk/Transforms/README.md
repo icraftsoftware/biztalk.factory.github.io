@@ -1,4 +1,4 @@
-# Be.Stateless.BizTalk.Transforms
+﻿# Be.Stateless.BizTalk.Transforms
 
 [![][github.badge]][github]
 
@@ -25,6 +25,33 @@
 ## Overview
 
 `Be.Stateless.BizTalk.Transforms` is part of the [BizTalk.Factory Runtime](./../Factory/Runtime/README.md) Package. This component provides a transform class library for general purpose Microsoft BizTalk Server® development.
+
+## Debugging Composite Microsoft BizTalk Server® Maps with Extension Objects
+
+Provided the map fixture class derives from [TransformFixture][transform-fixture] base class and that both [`Be.Stateless.BizTalk.Transform.Unit`][nuget.unit] and [`BizTalk.Server.2020.Utilities`][nuget.utilities] `NuGet` packages are referenced, it is possible to debug `XSLT` maps that make use of extension objects or combine other `XSLT` stylesheets through `xsl:include` or `xsl:import` top-level elements.
+
+Notice that the `URI`s accepted by the `href` attribute of these top-level elements are resolved by the [`XslMapUrlResolver`][xsl-mapurl-resolver] class and must conform to its prescribed grammar. Technically though, during a Microsoft Visual Studio®'s debugging session, it is the [MapCustomXsltPathResolver][map-custom-xslt-path-resolver] helper class that will actually resolve these `URI`s, trying to locate an `XSLT` source file on disk instead of inlined in a [TransformBase][transform-base]-derived type or embedded as a resource. This resolution will only succeed provided that:
+
+- The to-be-debugged `XSLT` stylesheet file is lying by convention next to the source `.btm` file &mdash;or equivalently, next to the generated `.btm.cs` file&mdash; in the case of a Microsoft BizTalk Server® map defined by a custom `XSLT`;
+
+- The to-be-debugged `XSLT` stylesheet file included or imported through a `URI` of the form `map://type/<map strong type name>` is lying next to the source `.btm` file of the included or imported map type;
+
+- The to-be-debugged `XSLT` stylesheet file included or imported through a `URI` of the form `map://resource/<embedded resource name>` is lying by convention in a folder, located relatively to the including or importing map, that corresponds to the resource name suffix starting right after what the resource name has in common with the including or importing map type's full name;
+
+- The to-be-debugged `XSLT` stylesheet file included or imported through a `URI` of the form `c:\folder\file.xslt` exists on disk.
+
+> **Tips** Run the following commands in an elevated session of the "Developer PowerShell for VS 2019" prompt should the error "Retrieving the COM class factory for component with CLSID {E6756135-1E65-4D17-8576-610761398C3C} failed due to the following error: 80040154 Class not registered." occurs while debugging map unit tests:
+>
+> ```PowerShell
+> regsvr32 $(Join-Path $env:VSINSTALLDIR 'Common7\IDE\Remote Debugger\x64\msdia140.dll')
+> regsvr32 $(Join-Path $env:VSINSTALLDIR 'Common7\IDE\Remote Debugger\x86\msdia140.dll')
+> ```
+>
+> Do not forget to reference the [`BizTalk.Server.2020.Utilities`][nuget.utilities] `NuGet` package should the error "Could not load file or assembly Microsoft.VisualStudio.Dia.dll." occurs.
+
+### Customizing To-Be-Debugged `XSLT` File Resolution
+
+Should the default resolution of the `XSLT` source file not be conclusive, due to other file layout conventions for instance, the map fixture's developer can control the resolution mechanism by overriding the [TransformFixture.TryResolveXsltPath][transform-fixture.try-resolve-xslt-path] method, which will always have the precedence over the default resolution used during debugging sessions.
 
 ## Developer Help
 
@@ -63,4 +90,14 @@ Detailed developer help has been provided as `XML` comments directly embedded in
 
 <!-- links -->
 
+[map-custom-xslt-path-resolver]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Transforms/blob/master/src/Be.Stateless.BizTalk.Transform.Unit/Unit/Transform/MapCustomXsltPathResolver.cs
+[nuget.utilities]: https://www.nuget.org/packages/BizTalk.Server.2020.Utilities
 [resharper]: https://www.jetbrains.com/resharper/
+[transform-base]: https://docs.microsoft.com/en-us/dotnet/api/microsoft.xlangs.basetypes.transformbase
+[transform-fixture.try-resolve-xslt-path]: https://github.com/icraftsoftware/biztalk.factory.github.io/blob/master/Help/BizTalk/Transform/Unit/TransformFixture_TTransform_.TryResolveXsltPath(string).md#transformfixturetryresolvexsltpathstring-method
+[transform-fixture]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Transforms/blob/master/src/Be.Stateless.BizTalk.Transform.Unit/Unit/Transform/TransformFixture.cs
+[xsl-mapurl-resolver]: https://github.com/icraftsoftware/biztalk.factory.github.io/blob/master/Help/BizTalk/Xml/XslMapUrlResolver.md#xslmapurlresolver-class
+
+<!--
+cSpell:ignore CLSID msdia140 regsvr32 VSINSTALLDIR
+-->

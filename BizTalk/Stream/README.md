@@ -26,6 +26,10 @@
 
 `Be.Stateless.BizTalk.Stream` is part of the [BizTalk.Factory Runtime](./../Factory/Runtime/README.md) Package. This component provides a stream class library for general purpose Microsoft BizTalk Server® development.
 
+## `XML` Stream Transformation
+
+`Be.Stateless.BizTalk.Stream` provides extension methods to easily transform `XML` streams, see [StreamExtensions][stream-extensions]'s `Transform` methods and [Transformer][transformer] class, while adding distinctive features at the same time, see [Compiled `XSLT` Transforms on Steroids](../Xml/README.md#compiled-xslt-transforms-on-steroids).
+
 ## Developer Help
 
 Detailed developer help has been provided as `XML` comments directly embedded in source code. Though developers usually browse through this documentation while developing thanks to, for instance, JetBrains [ReSharper][resharper] quick help &mdash;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>F1</kbd>, an online version of this inlined help has also been provided here for greater reachability:
@@ -64,3 +68,5 @@ Detailed developer help has been provided as `XML` comments directly embedded in
 <!-- links -->
 
 [resharper]: https://www.jetbrains.com/resharper/
+[stream-extensions]: https://github.com/icraftsoftware/biztalk.factory.github.io/blob/master/Help/BizTalk/Stream/StreamExtensions.md#streamextensions-class
+[transformer]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Stream/blob/master/src/Be.Stateless.BizTalk.Stream/Stream/Extensions/Transformer.cs

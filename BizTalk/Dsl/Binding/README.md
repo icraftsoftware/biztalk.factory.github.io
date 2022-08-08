@@ -152,6 +152,7 @@ Detailed developer help has been provided as `XML` comments directly embedded in
 [application-binding-validator]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/Visitor/ApplicationBindingValidator.cs
 [binding-info-builder]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/Visitor/BindingInfoBuilder.cs
 [environment-override-applicator]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/Visitor/EnvironmentOverrideApplicator.cs
+[github.samples]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Factory.Samples
 [i-application-binding-visitor]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Binding/blob/master/src/Be.Stateless.BizTalk.Dsl.Binding/Dsl/Binding/IApplicationBindingVisitor.cs
 [i-visitable]: https://github.com/icraftsoftware/Be.Stateless.BizTalk.Dsl.Abstractions/blob/master/src/Be.Stateless.BizTalk.Dsl.Abstractions/Dsl/IVisitable.cs
 [resharper]: https://www.jetbrains.com/resharper/
